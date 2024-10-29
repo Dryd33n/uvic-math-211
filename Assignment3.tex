@@ -1,0 +1,756 @@
+\documentclass{article}
+\usepackage[legalpaper, portrait, margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Math 211 Ass 3.}
+\author{Dryden Bryson}
+\date{October 2024}
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{Question 1:}
+\subsection*{a)}
+We prove linearity by proving that our function satisfies \textit{additive linearity} and \textit{scalar linearity}:\\\\
+\textbf{\underline{Additive Linearity:}}\\
+Let $\vec{x}, \vec{y} \in \mathbb{R}^3$ then we form and simplify as follows,
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $L(\vec{x}+\vec{y})$ & $=$ & $((\vec{x}+\vec{y})\times \vec{v}) + ((\vec{x}+\vec{y})\cdot \vec{v})\vec{v}$ & Definition of $L$\\
+         & $=$ & $( -\vec{v}\times(\vec{x}+\vec{y})) + ( \vec{v}\cdot(\vec{x}+\vec{y}))\vec{v}$ & Anti Commutativity \& Commutativity\\
+         & $=$ &$( (-\vec{v}\times\vec{x})+(-\vec{v}\times\vec{y})) + ( (\vec{v}\cdot\vec{x})+(\vec{v}\cdot\vec{y}))\vec{v}$  & Distributivity of Cross Product and Distributivity of Dot Product\\
+         & $=$ & $( (-\vec{v}\times\vec{x})+(-\vec{v}\times\vec{y})) + (\vec{v}\cdot\vec{x})\vec{v}+(\vec{v}\cdot\vec{y})\vec{v}$ & Multiplicative Distributivity\\
+         & $=$ & $ (-\vec{v}\times\vec{x}) + (\vec{v}\cdot\vec{x})\vec{v}+(-\vec{v}\times\vec{y})+(\vec{v}\cdot\vec{y})\vec{v}$ & Associativity \& Commutativity\\
+         & $=$ & $ (\vec{x}\times\vec{v}) + (\vec{x}\cdot\vec{v})\vec{v}+(\vec{y}\times\vec{v})+(\vec{y}\cdot\vec{v})\vec{v}$ & Anti Commutativity $\times 2$ \& Commutativity $\times 2$\\
+         & $=$ & $L(\vec{x})+L(\vec{y})$ & Definition of $L$\\
+    \end{tabular}
+\end{table} \\
+Thus since $L(\vec{x}+\vec{y})=L(\vec{x})+L(\vec{y})$, the property of additive linearity is satisified.\\
+\textbf{\underline{Scalar Linearity:}}\\
+Let $\vec{x}\in\mathbb{R}^3$ and $t\in\mathbb{R}$, then we form and simplify as follows,
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $L(t\vec{x})$ & $=$ & $((t\vec{x})\times\vec{v})+((t\vec{x})\cdot\vec{v})\vec{v}$ & Definition of $L$\\
+         & $=$ & $t(\vec{x}\times\vec{v})+(t(\vec{x}\cdot\vec{v}))\vec{v}$ & Associativity of Cross Product and Dot Product\\
+         & $=$ & $t(\vec{x}\times\vec{v})+t\vec{v}(\vec{x}\cdot\vec{v})$  & Distributivity\\
+         & $=$ & $t(\vec{x}\times\vec{v})+t(\vec{v}(\vec{x}\cdot\vec{v}))$ & Associativity\\
+         & $=$ & $t(\vec{x}\times\vec{v})+t((\vec{x}\cdot\vec{v})\vec{v})$ & Commutativity\\
+         & $=$ & $t((\vec{x}\times\vec{v})+((\vec{x}\cdot\vec{v})\vec{v}))$& Distributivity \\
+         & $=$ & $t\;L(\vec{x})$ & Definition of $L$
+    \end{tabular}
+\end{table} \\
+Thus since $L(t\vec{x})=t\;L(\vec{x})$, the property of scalar linearity is satisfied. \\ \\Since Additive Linearity and Scalar Linearity both hold, $L$ is a linear operator.
+\newpage
+\subsection*{b)}
+To compute $[L]$ we need to determine the result of $L$ on the standard basis vectors of $\mathbb{R}^3$, which are $\vec{e_1},\vec{e_2}$ and $\vec{e_3}$. Thus $[L]$ is given by: $$[L]=\begin{bmatrix}
+    | & | & | \\
+    L(\vec{e_1}) & L(\vec{e_2}) & L(\vec{e_3})\\
+    | & | & |
+\end{bmatrix}$$ Thus we perform the following computations:\\
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l|l|l}
+        \;\;\;\;\;\;\;\;\;$\underline{L(\vec{e_1})}$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; & \;\;\;\;\;\;\;\;\;$\underline{L(\vec{e_2})}$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; & \;\;\;\;\;\;\;\;\;$\underline{L(\vec{e_3})}$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\\
+        
+         &  & \\
+         
+        $\underline{\vec{e_1}\times\vec{v}}$: & 
+        $\underline{\vec{e_2}\times\vec{v}}$: & 
+        $\underline{\vec{e_3}\times\vec{v}}$:\\
+
+         &  & \\
+         
+       $ =\begin{bmatrix}
+            0(v_3) - 0(v_2) \\
+            0(v_1) - 1(v_3) \\
+            1(v_2) - 0(v_1) 
+        \end{bmatrix}=\begin{bmatrix}
+            0 - 0 \\
+            0 - v_3 \\
+            v_2 - 0 
+        \end{bmatrix}=\begin{bmatrix}
+            0 \\
+            - v_3 \\
+            v_2  
+        \end{bmatrix}$ & 
+        $ =\begin{bmatrix}
+            1(v_3) - 0(v_2) \\
+            0(v_1) - 0(v_3) \\
+            0(v_2) - 1(v_1) 
+        \end{bmatrix}=\begin{bmatrix}
+            v_3 - 0\\
+            0 - 0 \\
+            0 - v_1 
+        \end{bmatrix}=\begin{bmatrix}
+            v_3\\
+            0 \\
+            - v_1 
+        \end{bmatrix}$& 
+        $ =\begin{bmatrix}
+            0(v_3) - 1(v_2) \\
+            1(v_1) - 0(v_3) \\
+            0(v_2) - 0(v_1) 
+        \end{bmatrix}=\begin{bmatrix}
+            0- v_2 \\
+            v_1 - 0 \\
+            0 - 0 
+        \end{bmatrix}=\begin{bmatrix}
+            - v_2 \\
+            v_1  \\
+            0
+        \end{bmatrix}$\\
+        
+         &  & \\
+         &  & \\
+         
+        $\underline{\vec{e_1}\cdot \vec{v}}$: & 
+        $\underline{\vec{e_2}\cdot \vec{v}}$: & 
+        $\underline{\vec{e_3}\cdot \vec{v}}$:\\
+        $=1v_1 + 0v_2 + 0v_3=v_1$ & 
+        $=0v_1 + 1v_2 + 0v_3=v_2$ & 
+        $=0v_1 + 0v_2 + 1v_3=v_3$\\
+        
+         &  & \\
+         &  & \\
+         
+         $\underline{(\vec{e_1}\cdot \vec{v})\vec{v}}$: & 
+         $\underline{(\vec{e_2}\cdot \vec{v})\vec{v}}$: & 
+         $\underline{(\vec{e_3}\cdot \vec{v})\vec{v}}$:\\
+
+
+         
+         $=(v_1)\vec{v}=v_1\begin{bmatrix}v_1\\v_2\\v_3\end{bmatrix}
+         =\begin{bmatrix}v_1^2\\v_1v_2\\v_1v_3\end{bmatrix}$& 
+         
+         $=(v_2)\vec{v}=v_2\begin{bmatrix}v_1\\v_2\\v_3\end{bmatrix}
+         =\begin{bmatrix}v_2v_1\\v_2^2\\v_2v_3\end{bmatrix}$&
+         
+         $=(v_3)\vec{v}=v_3\begin{bmatrix}v_1\\v_2\\v_3\end{bmatrix}
+         =\begin{bmatrix}v_3v_1\\v_3v_2\\v_3^2\end{bmatrix}$\\
+         
+         &  & \\
+         &  & \\
+         
+         $\underline{L(\vec{e_1})}$& 
+         $\underline{L(\vec{e_2})}$ & 
+         $\underline{L(\vec{e_3})}$\\
+
+         
+         $=(\vec{e_1}\times \vec{v}) +(\vec{e_1}\cdot\vec{v})\vec{v}$&
+         $=(\vec{e_2}\times \vec{v}) +(\vec{e_2}\cdot\vec{v})\vec{v}$&
+         $=(\vec{e_3}\times \vec{v}) +(\vec{e_3}\cdot\vec{v})\vec{v}$\\
+
+         
+        $=\begin{bmatrix}
+            0 \\
+            - v_3 \\
+            v_2  
+        \end{bmatrix}+\begin{bmatrix}v_1^2\\v_1v_2\\v_1v_3\end{bmatrix}$ &
+        $=\begin{bmatrix}
+            v_3\\
+            0 \\
+            - v_1 
+        \end{bmatrix}+\begin{bmatrix}v_2v_1\\v_2^2\\v_2v_3\end{bmatrix}$& 
+        $=\begin{bmatrix}
+            - v_2 \\
+            v_1  \\
+            0
+        \end{bmatrix}+\begin{bmatrix}v_3v_1\\v_3v_2\\v_3^2\end{bmatrix}$\\
+        &  & \\
+        $=\begin{bmatrix}
+            v_1^2\\v_1v_2-v_3\\v_1v_3+v_2
+        \end{bmatrix}$ &
+        $=\begin{bmatrix}
+            v_2v_1+v_3\\v_2^2\\v_2v_3-v_1
+        \end{bmatrix}$ &
+        $=\begin{bmatrix}
+            v_3v_1-v_2\\v_3v_2+v_1\\v_3^2
+        \end{bmatrix}$\\
+         &  & \\
+         
+    \end{tabular}
+\end{table} \\
+Since we have computed $L(\vec{e_1}),L(\vec{e_2})$ and $L(\vec{e_3})$, $[L]$ is given by:$$[L]=\begin{bmatrix}
+    | & | & | \\
+    L(\vec{e_1}) & L(\vec{e_2}) & L(\vec{e_3})\\
+    | & | & |
+\end{bmatrix}=\begin{bmatrix}
+    v_1^2 &  v_2v_1+v_3 & v_3v_1-v_2\\
+    v_1v_2-v_3 & v_2^2& v_3v_2+v_1\\
+    v_1v_3+v_2 &v_2v_3-v_1 &v_3^2 \\
+\end{bmatrix}$$
+\newpage
+\section*{Question 2:}
+Let us first find the individual transformation matrices, then we will multiply them:\\
+\textbf{\underline{Reflects about the plane $2x_1-x^2+2x_3$:}}\\
+We need to find $[\text{refl}_{\vec{n}}]$ for $\vec{n}=\begin{bmatrix}2\\-1\\2\end{bmatrix}$ which is given by: 
+
+$$[\text{refl}_{\vec{n}}]= \begin{bmatrix}
+| & | & | \\
+\text{refl}_{\vec{n}}(\vec{e_{1}}) & 
+\text{refl}_{\vec{n}}(\vec{e_{2}}) & 
+\text{refl}_{\vec{n}}(\vec{e_{3}}) \\
+| & | & |
+\end{bmatrix}$$Thus we need to compute $\text{refl}_{\vec{n}}$ for the three basis vectors:\\
+\underline{\textit{$\text{refl}_{\vec{n}}(\vec{e_1})$:}}\\
+\\textit{$\text{proj}_{\vec{n}}(\vec{e_1})$:}\\
+$\text{
+      proj}_{\vec{n}}(\vec{e_1})=\frac
+{
+\begin{bmatrix}1\\0\\0\end{bmatrix}\cdot\begin{bmatrix}2\\-1\\2\end{bmatrix}
+}{
+\begin{bmatrix}2\\-1\\2\end{bmatrix}\cdot\begin{bmatrix}2\\-1\\2\end{bmatrix}
+}
+\begin{bmatrix}2\\-1\\2\end{bmatrix}
+=\frac{2}{4+1+4}\begin{bmatrix}2\\-1\\2\end{bmatrix}\
+=\frac{2}{9}\begin{bmatrix}2\\-1\\2\end{bmatrix}
+=\begin{bmatrix}4/9\\-2/9\\4/9\end{bmatrix}$
+
+ \\\\
+$
+\text{refl}_{\vec{n}}(\vec{e_1})=
+\begin{bmatrix}1\\0\\0\end{bmatrix}
+-2\text{proj}_{\vec{n}}(\vec{e_1})
+=\begin{bmatrix}1\\0\\0\end{bmatrix}-2\begin{bmatrix}4/9\\-2/9\\4/9\end{bmatrix}
+=\begin{bmatrix}1\\0\\0\end{bmatrix}-\begin{bmatrix}8/9\\-4/9\\8/9\end{bmatrix}
+=\begin{bmatrix}1/9\\4/9\\-8/9\end{bmatrix}$
+
+
+
+
+ \\ \underline{\textit{$\text{refl}_{\vec{n}}(\vec{e_2})$:}}\\
+\textit{$\text{proj}_{\vec{n}}(\vec{e_2})$:}\\
+$\text{
+      proj}_{\vec{n}}(\vec{e_2})=\frac
+{
+\begin{bmatrix}0\\1\\0\end{bmatrix}\cdot\begin{bmatrix}2\\-1\\2\end{bmatrix}
+}{
+\begin{bmatrix}2\\-1\\2\end{bmatrix}\cdot\begin{bmatrix}2\\-1\\2\end{bmatrix}
+}
+\begin{bmatrix}2\\-1\\2\end{bmatrix}
+=\frac{-1}{4+1+4}\begin{bmatrix}2\\-1\\2\end{bmatrix}\
+=\frac{-1}{9}\begin{bmatrix}2\\-1\\2\end{bmatrix}
+=\begin{bmatrix}-2/9\\1/9\\-2/9\end{bmatrix}$
+
+ \\\\
+$
+\text{refl}_{\vec{n}}(\vec{e_2})=
+\begin{bmatrix}0\\1\\0\end{bmatrix}
+-2\text{proj}_{\vec{n}}(\vec{e_2})
+=\begin{bmatrix}0\\1\\0\end{bmatrix}-2\begin{bmatrix}-2/9\\1/9\\-2/9\end{bmatrix}
+=\begin{bmatrix}0\\1\\0\end{bmatrix}-\begin{bmatrix}-4/9\\2/9\\-4/9\end{bmatrix}
+=\begin{bmatrix}4/9\\7/9\\4/9\end{bmatrix}$
+
+ \\ \underline{\textit{$\text{refl}_{\vec{n}}(\vec{e_3})$:}}\\
+\textit{$\text{proj}_{\vec{n}}(\vec{e_3})$:}\\
+$\text{
+      proj}_{\vec{n}}(\vec{e_3})=\frac
+{
+\begin{bmatrix}0\\0\\1\end{bmatrix}\cdot\begin{bmatrix}2\\-1\\2\end{bmatrix}
+}{
+\begin{bmatrix}2\\-1\\2\end{bmatrix}\cdot\begin{bmatrix}2\\-1\\2\end{bmatrix}
+}
+\begin{bmatrix}2\\-1\\2\end{bmatrix}
+=\frac{2}{4+1+4}\begin{bmatrix}2\\-1\\2\end{bmatrix}\
+=\frac{2}{9}\begin{bmatrix}2\\-1\\2\end{bmatrix}
+=\begin{bmatrix}4/9\\-2/9\\4/9\end{bmatrix}$
+
+ \\\\
+$
+\text{refl}_{\vec{n}}(\vec{e_3})=
+\begin{bmatrix}0\\0\\1\end{bmatrix}
+-2\text{proj}_{\vec{n}}(\vec{e_3})
+=\begin{bmatrix}0\\0\\1\end{bmatrix}-2\begin{bmatrix}4/9\\-2/9\\4/9\end{bmatrix}
+=\begin{bmatrix}0\\0\\1\end{bmatrix}-\begin{bmatrix}8/9\\-4/9\\8/9\end{bmatrix}
+=\begin{bmatrix}-8/9\\4/9\\1/9\end{bmatrix}$ \\ \\\\
+Then we have:
+$$[\text{refl}_{\vec{n}}]= \begin{bmatrix}
+| & | & | \\
+\text{refl}_{\vec{n}}(\vec{e_{1}}) & 
+\text{refl}_{\vec{n}}(\vec{e_{2}}) & 
+\text{refl}_{\vec{n}}(\vec{e_{3}}) \\
+| & | & |
+\end{bmatrix}=\begin{bmatrix}
+    1/9 & 4/9 &- 8/9\\
+    4/9 & 7/9 & 4/9\\
+    -8/9 & 4/9 & 1/9
+\end{bmatrix}$$ \\ \\ 
+\textbf{\underline{Rotates by an angle of $5\pi / 6$ about the $y$ axis:}}\\
+The rotation matrix that rotates a vector about the $y$-axis by an angle of $5\pi/6$ is given by:$$[R_{5\pi/6,y}]=\begin{bmatrix}
+\cos(5\pi/6) & 0 & \sin(5\pi/6) \\
+0 & 1 & 0 \\
+-\sin(5\pi/6) & 0 & \cos (5\pi/6)
+\end{bmatrix}=\begin{bmatrix}
+     -\sqrt{3}/2&0 & 1/2\\
+    0&1 &0 \\
+    -1/2&0 & -\sqrt{3}/2\\
+\end{bmatrix}$$
+\textbf{\underline{Reflects about the $yz$-plane:}}\\
+The rotation matrix that reflects a vector about the $yz$-plane is given by:$$[R_{y,z}]=\begin{bmatrix}
+    -1& 0& 0\\
+    0& 1& 0\\
+    0& 0&1 \\
+\end{bmatrix}$$
+\newpage
+After computing all three transformation matrices, we multiply them in reverse order to maintain order through matrix multiplication: $$[L]=([R_{y,z}][R_{5\pi/6,y}])[\text{refl}_{\vec{n}}]$$First: $$[R_{y,z}][R_{5\pi/6,y}]=\begin{bmatrix}
+    -1& 0& 0\\
+    0& 1& 0\\
+    0& 0&1 \\
+\end{bmatrix}\begin{bmatrix}
+     -\sqrt{3}/2&0 & 1/2\\
+    0&1 &0 \\
+    -1/2&0 & -\sqrt{3}/2\\\end{bmatrix}$$
+$$=\begin{bmatrix}
+    (-1)(-\frac{\sqrt{3}}{2}) + (0)(0) + (0)(-\frac{1}{2}) & 
+    (-1)(0) + (0)(1) + (0)(0) & 
+    (-1)(\frac{1}{2}) + (0)(0) + (0)(-\frac{\sqrt{3}}{2})\\
+    (0)(-\frac{\sqrt{3}}{2}) + (1)(0) + (0)(-\frac{1}{2}) & 
+    (0)(0) + (1)(1) + (0)(0) & 
+    (0)(\frac{1}{2}) + (1)(0) + (0)(-\frac{\sqrt{3}}{2})\\
+    (0)(-\frac{\sqrt{3}}{2}) + (0)(0) + (1)(-\frac{1}{2}) & 
+    (0)(0) + (0)(1) + (1)(0) & 
+    (0)(\frac{1}{2}) + (0)(0) + (1)(-\frac{\sqrt{3}}{2})\\
+\end{bmatrix}$$
+$$=\begin{bmatrix}
+    \frac{\sqrt{3}}{2} +0 + 0 & 
+    0 + 0 + 0& 
+    -\frac{1}{2}+0+0\\
+    0 +0+0& 
+    0 + 1 + 0 & 
+    0 + 0 + 0\\
+    0 + 0 + -\frac{1}{2} & 
+    0 + 0 + 0 & 
+    0 + 0 + -\frac{\sqrt{3}}{2}\\
+\end{bmatrix}=\begin{bmatrix}
+    \frac{\sqrt{3}}{2} & 0& -\frac{1}{2}\\
+    0& 1& 0\\
+    -\frac{1}{2} & 0 & -\frac{\sqrt{3}}{2}\\
+\end{bmatrix}$$
+\\\\Then we compute: $[L]=([R_{y,z}][R_{5\pi/6,y}])[\text{refl}_{\vec{n}}]$ $$
+[L]=([R_{y,z}][R_{5\pi/6,y}])[\text{refl}_{\vec{n}}]
+=\begin{bmatrix}
+    \frac{\sqrt{3}}{2} & 0& -\frac{1}{2}\\
+    0& 1& 0\\
+    -\frac{1}{2} & 0 & -\frac{\sqrt{3}}{2}\\
+\end{bmatrix}\begin{bmatrix}
+    1/9 & 4/9 &- 8/9\\
+    4/9 & 7/9 & 4/9\\
+    -8/9 & 4/9 & 1/9
+\end{bmatrix}$$
+$$=\begin{bmatrix}
+    (-\frac{\sqrt3}{2})(\frac{1}{9})+(0)(\frac{4}{9})+(-\frac{1}{2})(-\frac{8}{9})&
+    (-\frac{\sqrt3}{2})(\frac{4}{9})+(0)(\frac{7}{9})+((-\frac{1}{2})(\frac{4}{9})&
+    (-\frac{\sqrt3}{2})(-\frac{8}{9})+(0)(\frac{4}{9})+(-\frac{1}{2})(\frac{1}{9})\\
+
+    (0)(\frac{1}{9})+(1)(\frac{4}{9})+(0)(-\frac{8}{9})&
+    (0)(\frac{4}{9})+(1)(\frac{7}{9})+(0)(\frac{4}{9})&
+    (0)(-\frac{8}{9})+(1)(\frac{4}{9})+(0)(\frac{1}{9})\\
+
+    (-\frac{1}{2})(\frac{1}{9})+(0)(\frac{4}{9})+(-\frac{\sqrt3}{2})(-\frac{8}{9})&
+    (-\frac{1}{2})(\frac{4}{9})+(0)(\frac{7}{9})+(-\frac{\sqrt3}{2})(\frac{4}{9})&
+    (-\frac{1}{2})(-\frac{8}{9})+(0)(\frac{4}{9})+(-\frac{\sqrt3}{2})(\frac{1}{9})\\
+\end{bmatrix}=$$
+
+$$=\begin{bmatrix}
+    -\frac{\sqrt3}{18}+0+\frac{8}{18}&
+    -\frac{4\sqrt3}{18}+0+-\frac{4}{18}&
+    \frac{8\sqrt3}{18}+0+-\frac{1}{18}\\
+
+   0+\frac{4}{9}+0&
+    0+\frac{7}{9}+0&
+    0+\frac{4}{9}+0\\
+
+    -\frac{1}{18}+0+\frac{8\sqrt3}{18}&
+    -\frac{4}{18}+0+-\frac{4\sqrt3}{18}&
+    \frac{8}{18}+0+-\frac{\sqrt3}{18}
+\end{bmatrix}=\begin{bmatrix}
+    \frac{-\sqrt3+8}{18}&
+    \frac{-4\sqrt3-4}{18}&
+    \frac{8\sqrt3-1}{18}\\
+
+   \frac{4}{9}&
+    \frac{7}{9}&
+    \frac{4}{9}\\
+
+    \frac{-1+8\sqrt3}{18}&
+    \frac{-4-4\sqrt3}{18}&
+    \frac{8-\sqrt3}{18}
+\end{bmatrix}$$
+Finally we have that: $$[L]=\begin{bmatrix}
+    \frac{-\sqrt3+8}{18}&
+    \frac{-4\sqrt3-4}{18}&
+    \frac{8\sqrt3-1}{18}\\
+
+   4/9&
+    7/9&
+    4/9\\
+
+    \frac{-1+8\sqrt3}{18}&
+    \frac{-4-4\sqrt3}{18}&
+    \frac{8-\sqrt3}{18}
+\end{bmatrix}$$
+
+\newpage
+\section*{Question 3:}
+\subsection*{a)}
+Let us first find a matrix interpretation for $L$ and row reduce it to RREF: $$\begin{bmatrix}
+    x_2+2x_2+3x_3+4x_4\\
+    5x_1+6x_2+7x_3+8x_4\\
+    11x_1+14x_2+17x_3+20x_4
+\end{bmatrix}=\begin{bmatrix}
+    1& 2 & 3 & 4 \\
+    5& 6 & 7 & 8 \\
+    11& 14 & 17 & 20 \\
+\end{bmatrix}$$
+Then we will row reduce it:
+$$\begin{bmatrix}
+    1& 2 & 3 & 4 \\
+    5& 6 & 7 & 8 \\
+    11& 14 & 17 & 20 \\
+\end{bmatrix}\begin{aligned}
+    R_2 +& -5R_1\\
+    &\Rightarrow\\
+    R_3 +& -11R_1
+\end{aligned}\begin{bmatrix}
+    1&2&3&4\\
+    0&-4&-8&-12\\
+    0&-8&-16&-24
+\end{bmatrix}\begin{aligned}
+    R_2 &\div -4\\
+    &\Rightarrow\\
+\end{aligned}\begin{bmatrix}
+    1&2&3&4\\
+    0&1&2&3\\
+    0&-8&-16&-24
+\end{bmatrix}\begin{aligned}
+    R_3 +& 8R_2\\
+    &\Rightarrow\\
+\end{aligned}\begin{bmatrix}
+    1&2&3&4\\
+    0&1&2&3\\
+    0&0&0&0
+\end{bmatrix}$$
+
+
+\subsubsection*{i. \textit{$\text{Col}(A)$}}
+By observing the row reduced matrix, we see that columns 1 \& 2 contain the leading ones so the columns 1 \& 2 of the original matrix form the basis for the column-space of $L$: $$\left\{\begin{bmatrix}
+    1\\5\\1
+\end{bmatrix},\begin{bmatrix}
+    2\\6\\14
+\end{bmatrix}\right\}$$
+
+\subsubsection*{ii. \textit{$\text{Null}(A)$}}
+The null-space of $A$ is given by its solution to $A\vec{x}=0$ as follows, we can set our row reduced matrix equal to $\vec{0}$ as it has the same solution as the original:
+$$\left[\begin{array}{cccc|c}
+    1&2&3&4&0\\
+    0&1&2&3&0\\
+    0&0&0&0&0
+\end{array}\right]
+=\begin{cases}
+    x_1 +2x_2 +3x_3 +4x_4=0\\
+    x_2 +2x_3 +3x_4=0\\
+\end{cases}$$
+
+Then for the general solution since there is 2 free variables we represent $x_1$ and $x_2$ in terms of $x_3$ and $x_4$, first we find $x_2$:\\
+$x_2=-2x_3-3x_4$\\\\
+Then we can substitute $x_2$ in $R_1$ and expand and simplify as follows:\\
+$x_1 +2(-2x_3-3x_4) +3x_3 +4x_4=0$\\
+$x_1 +-4x_3-6x_4 +3x_3 +4x_4=0$\\
+$x_1 +-x_3-2x_4=0$\\
+$x_1=x_3+2x_4$\\\\
+Now we can represent $x_3=a$ and $x_4=b$ to represent our free variables where $a,b\in\mathbb{R}$: 
+$$\begin{cases}
+   x_1=a+2b\\
+   x_2=-2a-3b\\
+   x_3=a\\
+   x_4=b
+\end{cases}\;\;\;\;\;\;\;\Rightarrow\;\;\;\;\;\;\;\vec{x}=\begin{bmatrix}
+    a+2b\\
+    -2a-3b\\
+    a\\
+    b
+\end{bmatrix}=\begin{bmatrix}
+    a\\-2a\\a\\0
+\end{bmatrix}+\begin{bmatrix}
+    2b\\-3b\\0\\b
+\end{bmatrix}=a\begin{bmatrix}
+    1\\-2\\1\\0
+\end{bmatrix}+b\begin{bmatrix}
+    1\\-3\\0\\1
+\end{bmatrix}$$
+Since $a$ and $b$ are free variables we can assert that the following is a basis for the null-space of $A$ $$\left\{\begin{bmatrix}
+    1\\-2\\1\\0
+\end{bmatrix},\begin{bmatrix}
+    2\\-3\\0\\1
+\end{bmatrix}\right\}$$
+
+
+
+\subsubsection*{iii. \textit{$\text{Col}(A^T)$}}
+The column-space of the transpose of $A$ also known as the row-space of $A$ is given by the non zero rows of the row reduced matrix: $$\left\{\begin{bmatrix}
+    1\\2\\3\\4
+\end{bmatrix},\begin{bmatrix}
+    0\\1\\2\\3
+\end{bmatrix}\right\}$$
+\newpage
+\subsubsection*{iv. \textit{$\text{Null}(A^T)$}}
+To find the left null-space or the null-space of the transpose we must first find the transpose of $A$ $$A^T=\begin{bmatrix}
+    1 & 5 & 11\\
+    2 & 6 & 14\\
+    3 & 7 & 17\\
+    4 & 8 & 20
+\end{bmatrix}$$
+Then we row reduce the transposed matrix: $$\begin{bmatrix}
+    1 & 5 & 11\\
+    2 & 6 & 14\\
+    3 & 7 & 17\\
+    4 & 8 & 20
+\end{bmatrix}\begin{aligned}
+    R_2 +& -2R_1\\
+    &\Rightarrow\\
+    R_3 +& -3R_1\\
+    R_4 +& -4R_1
+\end{aligned}\begin{bmatrix}
+    1 & 5 & 11\\
+    0 & -4 & -8\\
+    0 & -8 & -16\\
+    0 & -12 & -24
+\end{bmatrix}\begin{aligned}
+    R_2&(-1/4)\\
+    &\Rightarrow\\
+    R_3&(-1/8)\\
+    R_4&(-1/12)
+\end{aligned}\begin{bmatrix}
+    1 & 5 & 11\\
+    0 & 1 & 2\\
+    0 & 1 & 2\\
+    0 & 1 & 2
+\end{bmatrix}\begin{aligned}
+    R_3 +& -2R_2\\
+    &\Rightarrow\\
+    R_4 +& -3R_2
+\end{aligned}\begin{bmatrix}
+    1 & 5 & 11\\
+    0 & 1 & 2\\
+    0 & 0 & 0\\
+    0 & 0 & 0
+\end{bmatrix}$$
+Then we set the matrix equal to $\vec{0}$ and we have that: $$\begin{cases}
+    x_1+5x_2+11x_3=0\\
+    x_2+2x_3=0
+\end{cases}$$
+We let $x_3=t$ where $t\in\mathbb{R}$ and the represent $x_1$ and $x_2$ in terms of $t$, first we find $x_2$:\\
+$x_2=-2x_3=-2t$\\\\
+Then we use the above to make a substitution in $R_1$ and expand and simplify as follows:\\
+$x_1+5x_2+11x_3=0$\\
+$x_1+5(-2x_3)+11x_3=0$\\
+$x_1+-10x_3+11x_3=0$\\
+$x_1+x_3=0$\\
+$x_1=-x_3=-t$\\\\
+Then we have that: $$\begin{cases}
+    x_1 = -t\\
+    x_2 = -2t\\
+    x_3 = t\\
+    x_4 = 0
+\end{cases}\;\;\;\;\;\;\;\Rightarrow\;\;\;\;\;\;\;\;\begin{bmatrix}
+    -t\\-2t\\t\\0
+\end{bmatrix}=t\begin{bmatrix}
+    -1\\-2\\1\\0
+\end{bmatrix}$$\\
+Since $t$ is a free variable we can assert that the following is a basis for $\text{Null}(A^T)$:$$\left\{\begin{bmatrix}
+    -1\\-2\\1\\0
+\end{bmatrix}\right\}$$
+
+Finally we have that$$\text{Col}(A)=\text{Span}\left\{\begin{bmatrix}
+    1\\5\\1
+\end{bmatrix},\begin{bmatrix}
+    2\\6\\14
+\end{bmatrix}\right\}\;\;\;\;\;\;\;
+\text{Null}(A)=\text{Span} $$ $$\text{Col}(A^T)=\text{Span}\left\{\begin{bmatrix}
+    1\\2\\3\\4
+\end{bmatrix},\begin{bmatrix}
+    0\\1\\2\\3
+\end{bmatrix}\right\}\;\;\;\;\;\;\;
+\text{Null}(A^T)=\text{Span}\left\{\begin{bmatrix}
+    -1\\-2\\1\\0
+\end{bmatrix}\right\}$$
+\subsection*{b)}
+By the rank nullity theorem the sum of the rank of a matrix and the nullity of the same matrix is equal to the number of columns in the respective matrix, thus we have that: 
+$$\text{Rank}(A)=2\;\;\;\;\text{Nullity}(A)=2\;\;\;\;\text{Rank}(A)+\text{Nullity}(A)=4$$
+Meaning that the matrix $A$ has $4$ columns which is true.\\\\\\
+We also have that: 
+$$\text{Rank}(A^T)=2\;\;\;\;\text{Nullity}(A^T)=1\;\;\;\;\text{Rank}(A^T)+\text{Nullity}(A^T)=3$$
+Meaning that the matrix $A^T$ has 3 columns which is true.\\\\Since the rank is $2$ it means that the function $L$ collapses the input in $\mathbb{R}^4$ to some plane in $\mathbb{R}^3$
+\newpage
+\section*{Question $4:$}
+\subsection*{a)}
+To find the LU factorization of $A$ we will first row reduce $A$, while keeping track of the elementary matrices respective to each row operation:$$\begin{bmatrix}
+    1&-1&-1\\
+    -2&3&1\\
+    3&-7&2
+\end{bmatrix}\begin{aligned}
+    R_2&+2R_1\\
+    &\Rightarrow
+\end{aligned}\begin{bmatrix}
+    1&-1&-1\\
+    0&1&-1\\
+    3&-7&2
+\end{bmatrix}\begin{aligned}
+    R_3&-3R_1\\
+    &\Rightarrow
+\end{aligned}\begin{bmatrix}
+    1&-1&-1\\
+    0&1&-1\\
+    0&-4&5
+\end{bmatrix}\begin{aligned}
+    R_3&+4R_2\\
+    &\Rightarrow
+\end{aligned}\begin{bmatrix}
+    1&-1&-1\\
+    0&1&-1\\
+    0&0&1
+\end{bmatrix}$$
+$$E_1=\begin{bmatrix}
+    1 & 0 & 0\\
+    2 & 1 & 0\\
+    0 & 0 & 1
+\end{bmatrix}\;\;\;\;\;\;\;\;\;\;\;\;
+E_2=\begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    -3 & 0 & 1
+\end{bmatrix}\;\;\;\;\;\;\;\;\;\;\;\;
+E_3=\begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 4 & 1
+\end{bmatrix}\;\;\;\;\;\;$$
+Then we find the respective inverted elementary matrices since $A=(E_1^{-1}E_2^{-1}E_3^{-1})U$ and $L=(E_1^{-1}E_2^{-1}E_3^{-1})$
+$$E_1^{-1}=\begin{bmatrix}
+    1 & 0 & 0\\
+    -2 & 1 & 0\\
+    0 & 0 & 1
+\end{bmatrix}\;\;\;\;\;\;\;\;\;\;\;\;
+E_2^{-1}=\begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    3 & 0 & 1
+\end{bmatrix}\;\;\;\;\;\;\;\;\;\;\;\;
+E_3^{-1} =\begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & -4 & 1
+\end{bmatrix}\;\;\;\;\;\;$$
+Now to find $L$ we need only multiply $E_1^{-1}(E_2^{-1}E_3^{-1})$ $$L=\begin{bmatrix}
+    1 & 0 & 0\\
+    -2 & 1 & 0\\
+    0 & 0 & 1
+\end{bmatrix}\left(\begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    3 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & -4 & 1
+\end{bmatrix}\right)=\begin{bmatrix}
+    1 & 0 & 0\\
+    -2 & 1 & 0\\
+    0 & 0 & 1
+\end{bmatrix}\left(\begin{bmatrix}
+      1 & 0 & 0\\
+    0 & 1 & 0\\
+    3 & -4 & 1
+\end{bmatrix}\right)=\begin{bmatrix}
+      1 & 0 & 0\\
+    -2 & 1 & 0\\
+    3 & -4 & 1
+\end{bmatrix}$$
+Thus we have that: $$A=LU=\begin{bmatrix}
+      1 & 0 & 0\\
+    -2 & 1 & 0\\
+    3 & -4 & 1
+\end{bmatrix}\begin{bmatrix}
+    1&-1&-1\\
+    0&1&-1\\
+    0&0&1
+\end{bmatrix}$$
+\newpage
+\subsection*{b)}
+To solve the system $A\vec{x}=\vec{b}$, we will first make the substitution $\vec{y}=U\vec{x}$: $$L\vec{y}=\vec{b}=\begin{bmatrix}
+      1 & 0 & 0\\
+    -2 & 1 & 0\\
+    3 & -4 & 1
+\end{bmatrix}\begin{bmatrix}
+    y_1\\y_2\\y_3
+\end{bmatrix}=\begin{bmatrix}
+    1\\-1\\1
+\end{bmatrix}\;\;\;\Rightarrow\;\;\;
+\begin{cases}
+  
+    y_1=1\\
+ -2(y_1)+y_2=-1\\ 
+     3(y_1)-4(y_2)+y_3=1
+\end{cases}$$
+Then we can use forward-substitution to solve for $\vec{y}$\\
+$R_1$: $y_1=1$\\\\$\begin{aligned}
+R_2: &-2(y_1)+y_2=-1\\
+&-2+y_2=-1\\
+&y_2=1\\
+\end{aligned}$ \\ \\\\
+$\begin{aligned}
+    R_3: & 3(y_1)-4(y_2)+y_3=1\\
+    & 3(1)-4(1)+y_3=1\\
+    & -1+y_3=1\\
+    & y_3=2
+\end{aligned}$\\\\\\
+We now have that: $$\vec{y}=\begin{bmatrix}
+    1\\1\\2
+\end{bmatrix}$$
+Now having $\vec{y}$ we can solve the system $U\vec{x}=\vec{y}$ and the computed $\vec{x}$ will be the solution to the matrix $[A|\vec{x]}]$:
+$$U\vec{x}=\vec{y}=\begin{bmatrix}
+    1&-1&-1\\
+    0&1&-1\\
+    0&0&1
+\end{bmatrix}\begin{bmatrix}
+    x_1\\x_2\\x_3
+\end{bmatrix}=\begin{bmatrix}
+    1\\1\\2
+\end{bmatrix}\;\;\;\Rightarrow\;\;\;\begin{cases}
+    x_1-x_2-x_3=1\\
+    x_2-x_3=1\\
+    x_3=2\\
+\end{cases}$$
+Then we can use back-substitution to solve for $\vec{x}$\\
+$R_3$: $x_3=2$\\
+\\$\begin{aligned}
+R_2: &x_2-x_3=1\\
+&x_2-2=1\\
+&x_2=3\\
+\end{aligned}$ \\ \\\\
+$\begin{aligned}
+    R_1: & \\
+    & x_1-x_2-x_3=1\\
+    & x_1-3-2=1\\
+    & x_1=6
+\end{aligned}$\\\\\\
+We now have that: $$\vec{x}=\begin{bmatrix}
+    6\\3\\2
+\end{bmatrix}$$
+Which is the solution to: $$[A|\vec{b}]=[LU|\vec{b}]=\vec{x}=\begin{bmatrix}
+    6\\3\\2
+\end{bmatrix}$$
+As desired.
+
+
+
+
+
+\end{document}

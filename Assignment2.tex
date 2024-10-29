@@ -1,0 +1,196 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=2.5cm]{geometry}
+\title{Math 211 Ass 2.}
+\author{Dryden Bryson}
+\date{September 2024}
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{Question 1,}
+Let $\vec{x},\vec{y}\in Y$, $\vec{v_1}$,$\vec{v_2}$ be vectors in $\mathbb{R}^n$ and $t\in \mathbb{R}$. Since $\vec{x},\vec{y}\in Y$ then,\\\\
+$\begin{cases}
+    x_1v_1+x_2v_2=0\\
+    y_1v_1+y_2v_2=0
+\end{cases}$
+ \\\\\\\underline{Non Empty}:\\
+
+
+ 
+ \begin{table}[htp]
+     \begin{tabular}{ll}
+          Since &  $0\vec{v_1}+0\vec{v_2}$\\
+          &  = $\vec{0}+\vec{0}$\\
+          &  = $\vec{0} = \vec{0}$\\
+     \end{tabular}
+ \end{table} \\
+ Then $\vec{0}=\begin{bmatrix}
+     0\\0
+ \end{bmatrix}\in Y$
+ \\\\\\
+ \underline{Closure Under Addition}:\\\\
+ Form $\vec{w}=\vec{x}+\vec{y}$. We have,
+ 
+ \begin{table}[htp]
+     \centering
+     \begin{tabular}{lcll}
+         $w_1\vec{v_1}+w_2\vec{v_2}$ &=& $(x_1+y_1)\vec{v_1}+(x_2+y_2)\vec{v_2}$ & \\
+          & $=$ & $x_1\vec{v_1}+y_1\vec{v_1}+x_2\vec{v_2}+y_2\vec{v_2}$ & Distributivity\\
+          & $=$ & $(x_1v_1+x_2v_2)+(y_1v_1+y_2v_2)$ & Associativity\\
+          & $=$ & $(0)+(0)$ & $\because \vec{x},\vec{y}\in Y$\\
+          & $=$ & 0 &
+     \end{tabular}
+ \end{table} \\
+ Thus since $w_1\vec{v_1}+w_2\vec{v_2}=0$ then, $\vec{w}=\vec{x}+\vec{y}\in Y$
+ \\\\\\
+ \underline{Closure Under Scalar-Multiplication}:\\\\
+Form $\vec{w}=t\vec{x}$. We have,
+ \begin{table}[htp]
+     \centering
+     \begin{tabular}{lcll}
+         $w_1\vec{v_1}+w_2\vec{v_2}$ &=& $(tx_1)\vec{v_1}+(tx_2)\vec{v_2}$ & \\
+          & $=$ & $tx_1\vec{v_1}+tx_2\vec{v_2}$ & Associativity\\
+          & $=$ & $t(x_1\vec{v_1}+x_2\vec{v_2})$ & Distributivity\\
+          & $=$ & $t(0)$ & $\because \vec{x}\in Y$\\
+          & $=$ & 0 &
+     \end{tabular}
+ \end{table} \\
+ Thus since, $w_1\vec{v_1}+w_2\vec{v_2}=0$ then $\vec{w}=t\vec{x}\in Y$\\\\\\
+ $\therefore$ As $Y$ satisfies being non-empty, closure under vector addition, closure under scalar multiplication then $Y$ is a subspace by definition.\;\;$\square$
+ \newpage
+ \section*{Question 2,}
+ \subsection*{a)}
+ Let $\vec{x}\in W$ and $\vec{t}\in \mathbb{R}$,\\\\
+ $W$ is not a subspace since it fails closure under scalar multiplication, since our scalar $t\in \mathbb{R}$ need not be an integer, when we perform scalar multiplication on $\vec{x}$ the result may not lead to $x_1,x_2$ and $x_3$ being integers, for example:\\\\
+Let $t=\frac{1}{2}$ and let $\vec{x}=\begin{bmatrix}
+    1\\2\\3
+\end{bmatrix}$, thus $\vec{x}$ satisfies the condition of $x_1,x_2$ and $x_3$ being integers, under scalar multiplication, form $\vec{w}=t\vec{x}$:$$\vec{w}=t\vec{x}=\frac{1}{2}\begin{bmatrix}
+    1\\2\\3
+\end{bmatrix}=\begin{bmatrix}
+    (\frac{1}{2})1\\(\frac{1}{2})2\\(\frac{1}{2})3
+\end{bmatrix}=\begin{bmatrix}
+    \frac{1}{2}\\
+    1\\
+    \frac{3}{2}\\
+\end{bmatrix}$$
+$\vec{w}=t\vec{x}$ does not satisfy the condition of the subspace $W$ that $w_1,w_2$ and $w_3$ are all integers. Thus $W$ is not a subspace since it fails under scalar multiplication. 
+\subsection*{b)}
+Let $\vec{x},\vec{y}\in X$, \\
+$X$ is not a subspace since it fails closure under vector addition, while maintaining the property that $x_1=x_2$ or $x_1=x_3$ and $y_1=y_2$ or $y_1=y_3$ it is not necessarily true that that the result of $\vec{x}+\vec{y}$ will yield a result that satisfies this condition, for example:\\
+Let $\vec{x}=\begin{bmatrix}
+    1\\2\\1
+\end{bmatrix}$ and $\vec{y}=\begin{bmatrix}
+    1\\1\\2
+\end{bmatrix}$ then form $\vec{w}=\vec{x}+\vec{y}$,$$
+\vec{w}=\vec{x}+\vec{y}=\begin{bmatrix}
+    1\\2\\1
+\end{bmatrix}
++
+\begin{bmatrix}
+    1\\1\\2
+\end{bmatrix}
+=
+\begin{bmatrix}
+    1+1\\
+    2+1\\
+    1+2
+\end{bmatrix}=
+\begin{bmatrix}
+    2\\3\\3
+\end{bmatrix}
+$$
+We see that in $\vec{w}$ that nor $w_1=w_2$ or $w_1=w_3$ is true, thus $X$ fails closure under scalar addition proving that $X$ is not a subspace by definition.
+\newpage
+\section*{Question 3, }
+Let $\vec{x},\vec{y}\in W$, $\vec{v}$ be a vector in $\mathbb{R}^n$ and $t\in\mathbb{R}$, then:\\\\
+$\begin{cases}
+    \vec{x}\cdot\vec{v}=0\\
+    \vec{y}\cdot\vec{v}=0
+\end{cases}$ \\\\\\
+\underline{Non-Empty}:\\
+Let $\vec{x}=\vec{0}$ we have:\\
+
+\begin{table}[htp]
+    \begin{tabular}{ccll}
+        $\vec{x}\cdot\vec{v}$ & $=$ & $x_1v_1+x_2v_2+\dots+x_nv_n$   & Dot Product Definition\\
+         & $=$ & $0v_1+0v_2+\dots+0v_3$&\\
+         & $=$ & $0+0+\dots+0$&\\
+         & $=$ & $0$&\\
+    \end{tabular}
+\end{table} \\
+Thus since $\vec{x}\cdot\vec{v}=0$ when $\vec{x}=\vec{0}$, then $\vec{0}=\begin{bmatrix}
+    0\\0\\\vdots\\0
+\end{bmatrix}\in W$\\\\
+\underline{Closure Under Vector Addition}:\\
+Form $\vec{w}=\vec{x}+\vec{y}$, we have:\\
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $\vec{w}\cdot\vec{v}$ & $=$ & $(\vec{x}+\vec{y})\cdot\vec{v}$ & \\
+         & $=$ & $(\vec{x}\cdot\vec{v})+(\vec{y}\cdot\vec{v})$ & Distributivity\\
+         & $=$ & $0+0$ & $\because \vec{x},\vec{y}\in W$\\
+         & $=$ & $0$ &
+    \end{tabular}
+\end{table} \\
+Thus since $\vec{w}\cdot{v}=0$ then $\vec{w}=\vec{x}+\vec{y}\in W$ \\
+\\\\
+\underline{Closure Under Scalar Multiplication}:\\\
+Form $\vec{w}=t\vec{x}$, we have:
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $\vec{w}\cdot\vec{v}$ & $=$ & $(t\vec{x})\cdot\vec{v}$ & \\
+         & $=$ & $t(\vec{x}\cdot\vec{v})$ & Associativity\\
+         & $=$ & $t(0)$ & $\because \vec{x}\in W$\\
+         & $=$ & $0$ & \\
+    \end{tabular}
+\end{table} \\
+Thus since $\vec{w}\cdot\vec{v}=0$ then $\vec{w}=t\vec{x}\in W$\\\\\\
+$\therefore$ As $W$ satisfies being non-empty, closure under vector addition, closure under scalar multiplication then $W$ is a subspace by definition. \;$\square$
+
+\newpage
+\section*{Question 4,}
+\subsection*{a)}
+Using properties of the dot product and given conditions we determine the value:
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $\vec{z}\cdot(2\vec{y}+\vec{z})$ & $=$ & $(2\vec{y}\cdot{z})+(\vec{z}\cdot\vec{z})$ & Distributivity\\
+         & $=$ & $(2\vec{y}\cdot3\vec{x})+(3\vec{x}\cdot3\vec{x})$ & Given Condition (i)\\
+         & $=$ & $2(\vec{y}\cdot3\vec{x})+3(\vec{x}\cdot3\vec{x})$ & Associativity $\times 2$\\
+         & $=$ & $6(\vec{y}\cdot\vec{x})+9(\vec{x}\cdot\vec{x})$ & Associativity $\times 2$\\
+         & $=$ & $6(4)+9(\vec{x}\cdot\vec{x})$ & Given Condition (ii)\\
+         & $=$ & $6(4)+9(\Vert \vec{x} \Vert^2)$ & Relation between length and dot product\\
+         & $=$ & $6(4)+9(5^2)$ & Given Condition (iv)\\
+         & $=$ & $24+9(25)$ & \\
+         & $=$ & $24+225$ & \\
+         & $=$ & $249$ & \\
+    \end{tabular}
+\end{table}
+
+\subsection*{b)}
+Using properties of the cross product and given conditions we determine the value:
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $\Vert(\vec{x}+2\vec{y})\times \vec{z}\Vert$ & $=$ & $\Vert -\vec{z}\times(\vec{x}+2\vec{y})\Vert$ & Anti-Commutativity\\
+         & $=$ & $\Vert (-\vec{z}\times\vec{x})+(-\vec{z}\times2\vec{y})\Vert$ & Distributivity\\
+         & $=$ & $\Vert (-3\vec{x}\times\vec{x})+(-\vec{z}\times2\vec{y})\Vert$ & Given Condition (i)\\
+         & $=$ & $\Vert -3(\vec{x}\times\vec{x})+2(-\vec{z}\times\vec{y})\Vert$ & Associativity $\times 2$\\
+         & $=$ & $\Vert -3(\vec{x}\times\vec{x})+-2(\vec{z}\times\vec{y})\Vert$ & Associativity\\
+         & $=$ & $\Vert -3(\vec{0})+-2(\vec{z}\times\vec{y})\Vert$ & Self-Degenerate\\
+         & $=$ & $\Vert \vec{0}+-2(\vec{z}\times\vec{y})\Vert$ & Properties of $\vec{0}$\\ 
+         & $=$ & $\Vert -2(4\hat{u})\Vert$ & Given Condition (iii)\\
+         & $=$ & $\Vert -8\hat{u}\Vert$ & Associativity\\
+         & $=$ & $\vert -8\vert\Vert\hat{u}\Vert$ & Common Factor\\
+         & $=$ & $8(1)$ & Absolute Value \& Property of the Unit Vector\\
+         & $=$ & $8$ &
+    \end{tabular}
+\end{table}
+\end{document}

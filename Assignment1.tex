@@ -1,0 +1,577 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+\usepackage[margin=0.5in]{geometry}
+\title{MATH 211 Ass. 1}
+\author{Dryden Bryson}
+\date{September 2024}
+
+\begin{document}
+
+
+
+\maketitle
+\newpage
+\section*{Question 1, Part A}\\
+\textbf{We are given the following information:}
+
+\begin{itemize}
+    \begin{itemize}
+        \item $\$20,000$ has been invested into money-market funds, municipal bonds and mutual funds.
+        \item $\$900$ interest has been earned from money-market funds (paying 3\% annually), municipal bonds (paying 4\% annually) and mutual funds (paying 7\% annually).
+        \item $\$1,000$ more  has been invested in mutual funds than municipal bonds.
+    \end{itemize}
+\end{itemize}
+
+\textbf{We now turn the following information into a system of linear equations:}
+\begin{itemize}
+    \begin{itemize}
+        \item let $x$ equal the amount of money invested into money-market fund.
+        \item let $y$ equal the amount of money invested into municipal bonds.
+        \item let $z$ equal the amount of money invested into mutual funds.
+    \end{itemize}
+\end{itemize}
+
+\textbf{From the given information:}
+\begin{itemize}
+    \begin{itemize}
+        \item $\$20,000$ has been invested into money-market funds, municipal bonds and mutual funds.
+        $$x+y+z=20000$$
+        \item $\$900$ interest has been earned from money-market funds (paying 3\% annually), municipal bonds (paying 4\% annually) and mutual funds (paying 7\% annually).
+        $$0.03x+0.04y+0.07z=900$$
+        \item $\$1,000$ more  has been invested in mutual funds than municipal bonds.
+        $$z=y+1000 \Rightarrow -y+z=1000$$
+    \end{itemize}
+\end{itemize}
+\textbf{Now combining it into a system of linear equations:}
+
+$$\begin{cases} 
+    \begin{equation*}
+    \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;x+y+z &= 20000\\
+    0.03x+0.04y+0.07z &= 900\\
+    \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;-y+z &= 1000  
+    \end{equation*}
+   
+\end{cases}$$
+
+\newpage
+\section*{Question 1, Part B}
+\textbf{Now we will solve the system of linear equations to determine the initial investment amounts among the three financial instruments:\\}
+
+$
+\begin{cases} 
+    
+    \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;x+y+z &= 20000\\
+    0.03x+0.04y+0.07z &= 900\\
+    \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;-y+z &= 1000  
+    
+\end{cases}
+$\\\\
+
+$
+\begin{aligned} 
+R_2 \times& 100\\
+&\Rightarrow
+\end{aligned}
+$
+\;\;\;\;\;
+$
+\begin{cases} 
+    
+    \;\;\;\;\;x+y+z &= 20000\\
+    3x+4y+7z &= 90000\\
+    \;\;\;\;\;\;\;\;\;-y+z &= 1000  
+    
+\end{cases}
+$\\\\
+
+$
+\begin{aligned} 
+R_2 + &(-3)\times R_1\\
+&\Rightarrow
+\end{aligned}
+$
+\;
+$
+\begin{cases} 
+    
+    x+y+z &= 20000\\
+    \;\;\;\;\;y+4z &= 30000\\
+    \;\;\;\,-y+z &= 1000  
+    
+\end{cases}
+$\\\\
+
+$
+\begin{aligned} 
+R_3 +& R_2\\
+&\Rightarrow
+\end{aligned}
+$
+\;
+$
+\begin{cases} 
+    
+    x+y+z &= 20000\\
+    \;\;\;\;\;y+4z &= 30000\\
+    \;\;\;\;\;\;\;\;\;\;\,\;5z &= 31000  
+    
+\end{cases}
+$\\\\
+\textbf{Using back-substitution we find that:}
+
+
+\begin{itemize}
+    
+        \item $5z=31000\\ \Rightarrow z=\frac{31000}{5}\\ \Rightarrow z=6200$\\
+        \item $y+4z=30000\\ \Rightarrow y=30000-4z\\ \Rightarrow y=30000-4(6200)\\ \Rightarrow y = 5200$\\
+        \item $x+y+z=20000\\ \Rightarrow x=20000-y-z\\ \Rightarrow x=20000-(6200)-(5200)\\ \Rightarrow x=8600$\\\\
+\end{itemize}
+\textbf{Now that we have solved our system we can conclude the original investments made into the three financial instruments by Warren:}
+\begin{itemize}
+    \item Warren invested $\$8,600$ into money-market funds
+    \item Warren invested $\$5,200$ into municipal bonds
+    \item Warren invested $\$6,200$ into mutual funds
+\end{itemize}
+
+\newpage
+\section*{Question 2, Part A}
+When we reduce a under-determined system, we will always end up with two variables that are free and do not have constraints because the number of equations (constraints) are less than the number of variables. We may have one or more variables that are constrained to a specific number but in a under-determined system there will always be at least two free variables, since there is an infinite number of additive inverses we have infinite solutions. The only case where we have no solutions is in a inconsistent system where the equations are contradictory. This means we will never have one unique solution, only infinite or none. 
+\subsection*{i)}
+\textbf{We demonstrate an inconsistent under-determined system with no solutions:\\\\}
+$
+\begin{bmatrix}[ccc|c]
+  1 & 1 & 1 & 1\\
+  1 & 1 & 1 & 2
+\end{bmatrix}
+$\;\;\;
+$
+\begin{aligned} 
+R_2 + &(-1)\cdot R_1\\
+&\Rightarrow
+\end{aligned}
+$\;\;\;
+$
+\begin{bmatrix}[ccc|c]
+  1 & 1 & 1 & 1\\
+  0 & 0 & 0 & 1
+\end{bmatrix}
+$\\\\
+This system is inconsistent since $0\neq 1$ and therefore the system has no solutions.
+
+\subsection*{ii)}
+\textbf{We demonstrate a consistent under-determined system with infinite solutions:\\\\}
+$
+\begin{bmatrix}[ccc|c]
+  1 & 1 & 1 & 1\\
+  1 & -1 & 1 & 0
+\end{bmatrix}
+$\;\;\;
+$
+\begin{aligned} 
+R_2 + &(-1)\cdot R_1\\
+&\Rightarrow
+\end{aligned}
+$\;\;\;
+$
+\begin{bmatrix}[ccc|c]
+  1 & 1 & 1 & 1\\
+  0 & -2 & 0 & -1
+\end{bmatrix
+}$
+$\;\;\;
+\begin{aligned} 
+R_2 \times& -\frac{1}{2}\\
+&\Rightarrow
+\end{aligned}
+$\;\;\;
+$
+\begin{bmatrix}[ccc|c]
+  1 & 1 & 1 & 1\\
+  0 & 1 & 0 & \frac{1}{2}
+\end{bmatrix}
+$
+\\We now interpret the above matrix in REF to provide a general solution to prove it has infinite solutions:\\\\
+$
+\begin{cases}
+    x_1+x_2+x_3&=1\\
+    x_2&=\frac{1}{2}
+\end{cases}
+$
+\\\\Let $x_3 = t$, our "free" variable
+
+$R_1$\;\;\;$(x_1+x_2+x_3=1)$\\\Rightarrow$(x_1+(\frac{1}{2})+t=1)$\\\Rightarrow$(x_1=\frac{1}{2}-t)$\\
+Now we can write our solution in general form, valid for any $t$, therefore having infinite solutions\\
+$\begin{cases}
+    x_1=\frac{1}{2}-t\\
+    x_2=\frac{1}{2}\\
+    x_3=t
+\end{cases}$
+
+\newpage
+\section*{Question 2, Part B}
+\subsection*{i)}
+\textbf{Consider the system:\\}
+$\begin{cases}
+    x_1+x_2 &= 7\\
+    2x_1-3x_2 &= -6\\
+    x_1-2x_2 &= -5
+\end{cases} $\;\;
+\Rightarrow
+\begin{bmatrix}[cc|c]
+  1 & 1 & 7\\
+  2 & -3 & -6\\
+  1 & -2 & -5
+\end{bmatrix}
+$
+\\\\We now solve the system to determine the 1 \textbf{unique solution}:\\\\
+$\begin{bmatrix}[cc|c]
+  1 & 1 & 7\\
+  2 & -3 & -6\\
+  1 & -2 & -5
+\end{bmatrix}$
+\;\;\;
+$
+\begin{aligned} 
+R_2 +& (-2)\times R_1\\
+&\Rightarrow
+\end{aligned}
+$\;\;\;
+\;
+$\begin{bmatrix}[cc|c]
+  1 & 1 & 7\\
+  0 & -5 & -20\\
+  1 & -2 & -5
+\end{bmatrix}$
+\;\;\;
+$
+\begin{aligned} 
+R_3 +& (-1)\times R_1\\
+&\Rightarrow
+\end{aligned}
+$\;\;\;
+\;
+$\begin{bmatrix}[cc|c]
+  1 & 1 & 7\\
+  0 & -5 & -20\\
+  0 & -3 & -12
+\end{bmatrix}$
+\;\;\;\\\\\\
+$
+\begin{aligned} 
+R_2 &\times -\frac{1}{5}\\
+&\Rightarrow\\
+R_3 &\times -\frac{1}{3}
+\end{aligned}
+$\;\;\;
+$\begin{bmatrix}[cc|c]
+  1 & 1 & 7\\
+  0 & 1 & 4\\
+  0 & 1 & 4
+\end{bmatrix}$
+\;
+$
+\begin{aligned} 
+R_3 &+ (-1)R_2\\
+&\Rightarrow
+\end{aligned}
+$\;\;\;
+$\begin{bmatrix}[cc|c]
+  1 & 1 & 7\\
+  0 & 1 & 4\\
+  0 & 0 & 0
+\end{bmatrix}$\\
+This over-determined matrix in REF has one unique solution: 
+\begin{cases}
+    x_1=3\\
+    x_2=4
+\end{cases}
+\subsection*{ii)}
+\textbf{Consider the system:\\}
+
+$\begin{cases}
+    x_1+x_2 =& 2\\
+    x_1+2x_2=& 4\\
+    x_1+3x_2=& 5
+\end{cases}$
+\;\;\Rightarrow\;\;
+$\begin{bmatrix}[cc|c]
+  1 & 1 & 2\\
+  1 & 2 & 4\\
+  1 & 3 & 5
+\end{bmatrix}$\\$
+We now solve the system to find a contradiction and prove it has \textbf{no solutions}:\\\\
+$\begin{bmatrix}[cc|c]
+  1 & 1 & 2\\
+  1 & 2 & 4\\
+  1 & 3 & 5
+\end{bmatrix}$
+\;\begin{aligned} 
+R_2 + &(-1)R_1\\
+&\Rightarrow\\
+R_3 + &(-1)R_1
+\end{aligned}
+\;
+$\begin{bmatrix}[cc|c]
+  1 & 1 & 2\\
+  0 & 1 & 2\\
+  0 & 2 & 3
+\end{bmatrix}$
+\;\begin{aligned} 
+R_3 + &(-2)R_2\\
+&\Rightarrow
+\end{aligned}
+\;
+$\begin{bmatrix}[cc|c]
+  1 & 1 & 2\\
+  0 & 1 & 2\\
+  0 & 0 & -1
+\end{bmatrix}$\\\\
+This matrix in REF shows a row $(0,0|-1)$ indicating a contradiction, meaning there are no solutions.
+
+\subsection*{iii)}
+\textbf{Consider the system:\\}
+\begin{cases}
+    x_1+2x_2 =& 4\\
+    2x_1+4x_2 =& 8\\
+    3x_1+6x_2 =& 12
+\end{cases}
+\;
+\Rightarrow
+\;
+$\begin{bmatrix}[cc|c]
+  1 & 2 & 4\\
+  2 & 4 & 8\\
+  3 & 6 & 12
+\end{bmatrix}$\\\\$
+We now solve the system to prove that there are \textbf{infinite solutions}:\\\\
+$\begin{bmatrix}[cc|c]
+  1 & 2 & 4\\
+  2 & 4 & 8\\
+  3 & 6 & 12
+\end{bmatrix}$
+\;
+\begin{aligned} 
+R_2 + &(-2)R_1\\
+&\Rightarrow\\
+R_3 + &(-3)R_1
+\end{aligned}
+\;
+$\begin{bmatrix}[cc|c]
+  1 & 2 & 4\\
+  0 & 0 & 0\\
+  0 & 0 & 0
+\end{bmatrix}$
+\;
+\Rightarrow
+\;
+\begin{cases}
+    x_1+2x_2=4\\
+    0=0\\
+    0=0
+\end{cases}\\\ $
+For the general solution we let $x=t$\\
+$R(1) (t+2x_2=4)$\\
+$x_2=\frac{4-t}{2}$\\
+We now have infinite solutions in the general form: \begin{cases}
+    x_1=t\\
+    x_2=\frac{4-t}{2}
+\end{cases} for all $t$
+\newpage
+\section*{Question 3, Part A}
+\textbf{Constructing the system of linear equations:\\\\}
+\begin{cases}
+    a_0+x_0a_1+x_0^2a_2+x_0^3a_3=y_0\\
+    a_0+x_1a_1+x_1^2a_2+x_1^3a_3=y_1\\
+    a_0+x_2a_1+x_2^2a_2+x_2^3a_3=y_2\\
+    a_0+x_3a_1+x_3^2a_2+x_3^3a_3=y_3
+\end{cases}\\
+\subsection*{Part B)}
+Now we construct the matrix by filling in the $x_n$ values with the given points and solve for the coefficients $a_0...a_3$\\\\
+$\begin{bmatrix}[cccc|c]
+  1 & -2 & 4 & -8 & -1\\
+  1 & -1 & 1 & -1 & 7\\
+  1 & 2 & 4 & 8 & -5\\
+  1 & 3 & 9 & 27 & -1
+\end{bmatrix}$
+\;
+\begin{aligned}
+    R_2+&(-1)R_1\\
+    R_3+&(-1)R_1\\
+    R_4+&(-1)R_1\\
+    &\Rightarrow
+\end{aligned}
+\;
+$\begin{bmatrix}[cccc|c]
+  1 & -2 & 4 & -8 & -1\\
+  0 & 1 & -3 & 7 & 8\\
+  0 & 4 & 0 & 16 & -4\\
+  0 & 5 & 5 & 35 & 0
+\end{bmatrix}$
+\;
+\begin{aligned}
+    R_3+&(-4)R_2\\
+    R_4+&(-5)R_2\\
+    &\Rightarrow
+\end{aligned}
+\;
+$\begin{bmatrix}[cccc|c]
+  1 & -2 & 4 & -8 & -1\\
+  0 & 1 & -3 & 7 & 8\\
+  0 & 0 & 12 & -12 & -36\\
+  0 & 0 & 20 & 0 & -40
+\end{bmatrix}$
+\\\\\;
+\begin{aligned}
+    R_3&\times\frac{1}{12}\\
+    R_4&\times\frac{1}{20}\\
+    &\Rightarrow
+\end{aligned}
+\;
+$\begin{bmatrix}[cccc|c]
+  1 & -2 & 4 & -8 & -1\\
+  0 & 1 & -3 & 7 & 8\\
+  0 & 0 & 1 & -1 & -3\\
+  0 & 0 & 1 & 0 & -2
+\end{bmatrix}$
+\;
+\begin{aligned}
+    R_4&+(-1)R_3\\
+    &\Rightarrow
+\end{aligned}
+\;
+$\begin{bmatrix}[cccc|c]
+  1 & -2 & 4 & -8 & -1\\
+  0 & 1 & -3 & 7 & 8\\
+  0 & 0 & 1 & -1 & -3\\
+  0 & 0 & 0 & 1 & 1
+\end{bmatrix}$
+\;
+\Rightarrow
+\;
+\begin{cases}
+    a_0-2a_1+4a_2-8a_3&=-1\\
+    a_1-3a_2+7a_3&=8\\
+    a_2-a_3&=-3\\
+    a_3&=1
+\end{cases}\\\\$
+Using back substitution we find the solution to the above system in REF:
+
+\begin{itemize}
+    \item $(R_4)\;\;\;a_3=1$
+    
+    \item $(R_3)\;\;\;a_2-a_3=-3$
+    \\ \Rightarrow $a_2-(1)=-3$
+    \\ \Rightarrow$a_2=-2$
+
+    \item $(R_2)\;\;\;a_1-3a_2+7a_3&=8$
+    \\ \Rightarrow $a_1 - 3(-2)+7(1)=8$
+    \\ \Rightarrow $a_1 + 13 =8$
+    \\ \Rightarrow $a_1 = -5$
+
+    \item $(R_1)\;\;\;a_0-2a_1+4a_2-8a_3&=-1$ 
+    \\ \Rightarrow $a_0-2(-5)+4(-2)-8(1)&=-1$
+    \\ \Rightarrow $a_0+10-8-8=-1$
+    \\ \Rightarrow $a_0=5$  
+\end{itemize}
+\\ Using Gaussian elimination and back substitution we find that the solution to our system is:
+\begin{cases}
+    a_0=5\\
+    a_1=-5\\
+    a_2=-2\\
+    a_3=1\\
+\end{cases}
+\\Using our solution, the cubic polynomial that passes through the points: $(-2,-1),(-1,7),(2,-5)$ and $(3,-1)$ is:$$P(x)=5-5x-2x^{2}+x^{3}$$
+
+\newpage
+\section*{Question 4}
+\textbf{Consider the system:\\}
+\begin{cases}
+    x+2y+6z &= 2\\
+    2x+5y+(2k+12)z &=4\\
+    kx+2z &= 1
+\end{cases}
+\\ Now we represent it as a matrix and reduce it to REF using row operations:\\
+\begin{cases}
+    x+2y+6z &= 2\\
+    2x+5y+(2k+12)z &=4\\
+    kx+2z &= 1
+\end{cases}
+\;
+\Rightarrow
+\;
+\begin{bmatrix}[ccc|c]
+  1 & 2 & 6 & 2\\
+  2 & 5 & 2k+12 & 4\\
+  k & 0 & 2 & 1
+\end{bmatrix}
+\;
+\begin{aligned}
+    R_2+&(-2)R_1\\
+    &\Rightarrow
+\end{aligned}
+\;
+\begin{bmatrix}[ccc|c]
+  1 & 2 & 6 & 2\\
+  0 & 1 & 2k & 0\\
+  k & 0 & 2 & 1
+\end{bmatrix}
+\;\\\\\\
+\begin{aligned}
+    R_3+&(-k)R_1\\
+    &\Rightarrow
+\end{aligned}
+\;
+\begin{bmatrix}[ccc|c]
+  1 & 2 & 6 & 2\\
+  0 & 1 & 2k & 0\\
+  0 & -2k & 2-6k & 1-2k
+\end{bmatrix}
+\;
+\begin{aligned}
+    R_3+&(2k)R_2\\
+    &\Rightarrow
+\end{aligned}
+\;
+\begin{bmatrix}[ccc|c]
+  1 & 2 & 6 & 2\\
+  0 & 1 & 2k & 0\\
+  0 & 0 & 4k^2-6k+2 & 1-2k
+\end{bmatrix}$
+\\\\Now that our matrix is in REF we can determine all values of $k$ such that the system has:
+
+\subsection*{(a) No Solution}
+To find a value of $k$ such that our system has no solution we need to make the last row $(0 \;0 \;0\; | n)$ where $n$ is a non-zero number, we will use the quadratic formula to find values of $k$ such that $4k^2-6k+2=0$: $$\frac{-(-6)\pm \sqrt{(-6)^2-4(4)(2)}}{2(4)}=1,\frac{1}{2}$$
+When $k=1$, $(R3)=(0\;0\;0\;|\;-1)$, which surfaces a contradiction meaning our equation has no solution
+
+\subsection*{(b) Infinite Solutions}
+From part a we know when $k=1$ or $k=\frac{1}{2}$ our polynomial evaluates to 0. Fortunately when $k=\frac{1}{2}$ our billy/RHS also evaluates to 0, meaning $(R3) = (0\;0\;0\;|\;0)$\\\\
+Now we can derive a solution in general form from the following system when $k=\frac{1}{2}$, when $k=\frac{1}{2}$ our system becomes:\\
+\begin{cases}
+    x+2y+6z&=2\\
+    y+z&=0
+\end{cases}\\
+let $z=t$, our free variable, thus:\\\\
+$(R2) = y+t=0$\\
+\Rightarrow $y=-t$\\\\$
+and,\\
+$(R1)=x-2t+6t=2$\\
+\Rightarrow $x + 4t =2$\\
+\Rightarrow $x=2-4t$\\$
+from this we can derive our general solution: \begin{cases}
+    x=2-4t\\
+    y=-t\\
+    z=t
+\end{cases}
+\;
+for all values of $t$, thus demonstrating we have infinite solutions.
+
+\subsection*{(c) A unique solution}
+Since we know that when $k=1$ we have no solutions and that when $k=\frac{1}{2}$ we have infinite solutions we can ascertain that for any value of $k\neq 1$ and $k \neq \frac{1}{2}$ we will have one unique solution to the system.
+\end{document}
