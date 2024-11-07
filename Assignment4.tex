@@ -2,14 +2,621 @@
 \usepackage[legalpaper, portrait, margin=0.5in]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{cancel}
 
-\title{}
-\author{}
-\date{}
+\title{Math 122 Assignment 4.}
+\author{Dryden Bryson}
+\date{October 6th 2024}
 
 \begin{document}
 
 \maketitle
 \newpage
+\section*{Question 1:}
+To Prove that $\mathbb{V}=\mathbb{R}^{2}$ is a vector space equipped with addition and scalar multiplication defined as:
+$$
+\begin{bmatrix} x_1 \\ x_2 \end{bmatrix} \oplus \begin{bmatrix} y_1 \\ y_2 \end{bmatrix} = \begin{bmatrix} x_1 + y_1 - 3 \\ x_2 + y_2 + 1 \end{bmatrix}
+$$ 
+$$k \odot \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} kx_1 - 3k + 3 \\ kx_2 + k - 1 \end{bmatrix}.
+$$
+We will prove each axiom of vector space V1-V10:
+\subsubsection*{V1: Closure Under Addition}
+Let $\underline{x},\underline{y}\in \mathbb{V}=\mathbb{R}^{2}$, we note that addition is defined as:
+$$
+\underline{x}\oplus\underline{y} = \begin{bmatrix} x_1 + y_1 - 3 \\ x_2 + y_2 + 1 \end{bmatrix}
+$$ 
+Which yields a 2-dimensional vector expressed of real numbers thus $\underline{x}\oplus\underline{y}\in\mathbb{Z}=\mathbb{R}^{2}$
+and therefore Closure Under Addition is satisfied.
+\subsubsection*{V2: Commutativity of Addition}
+Let $\underline{x},\underline{y}\in \mathbb{V}=\mathbb{R}^{2}$, taking the defition of addition then:
+\begin{table}[htp]
+\centering
+\begin{tabular}{cclc}
+   $\underline{x}\oplus\underline{y}$ & $=$  & $\begin{bmatrix} x_1 + y_1 - 3 \\ x_2 + y_2 + 1 \end{bmatrix}$  & Addition defined in $\mathbb{V}$  \\
+   &&&\\
+   & $=$  &  $\begin{bmatrix} y_1 + x_1 - 3 \\ y_2 + x_2 + 1 \end{bmatrix}$ &   \\
+   & $=$ & $\underline{y}\oplus\underline{x}$&
+\end{tabular}
+\end{table}\\
+Thus $\underline{x}\oplus\underline{y}=\underline{y}\oplus\underline{x}$ and therefore Commutativity of Addition is satisfied.
+\subsubsection*{V3: Associativity of addition}
+Let $\underline{x}$, $\underline{y}$, $\underline{z}\in \mathbb{V}$, then we compute $(\underline{x}\oplus\underline{y})\oplus\underline{z}$ and $\underline{x}\oplus(\underline{y}\oplus\underline{z})$
+\begin{table}[htp]
+\centering
+\begin{tabular}{cclc|cclc}
+  $(\underline{x}\oplus\underline{y})\oplus\underline{z}$ & $=$  & $\begin{bmatrix} x_1 + y_1 - 3 \\ x_2 + y_2 + 1 \end{bmatrix}\oplus\underline{z}$  &   & $\underline{x}\oplus(\underline{y}\oplus\underline{z})$  & $=$  & $\underline{x}\oplus\begin{bmatrix} y_1 + z_1 - 3 \\ y_2 + z_2 + 1 \end{bmatrix}$  &   \\
+   &&&&&&&\\
+   & $=$  & $\begin{bmatrix} ( x_1 + y_1 - 3)+z_{1}-3\\ ( x_2 + y_2 + 1) +z_{2}+1\end{bmatrix}$  &   &   & $=$  & $\begin{bmatrix}x_{1} +( y_1 + z_1 - 3) -3 \\x_{2}+( y_2 + z_2 + 1)+1 \end{bmatrix}$  &   \\
+   &&&&&&&\\
+   &   &   &   &   & $=$  & $\begin{bmatrix}x_{1} + y_1 + z_1 - 3 -3 \\x_{2}+ y_2 + z_2 + 1+1 \end{bmatrix}$  &   \\
+   &&&&&&&\\
+   &   &   &   &   &  $=$ &  $\begin{bmatrix}  x_1 + y_1 - 3+z_{1}-3\\ x_2 + y_2 + 1 +z_{2}+1\end{bmatrix}$  &   \\
+   &&&&&&&\\
+   &&&&&$=$& $\begin{bmatrix} ( x_1 + y_1 - 3)+z_{1}-3\\ ( x_2 + y_2 + 1) +z_{2}+1\end{bmatrix}$ &  
+\end{tabular}
+\end{table}\\
+We observe that $(\underline{x}\oplus\underline{y})\oplus\underline{z}=\underline{x}\oplus(\underline{y}\oplus\underline{z})$ therefore Associativity of Addition is satisifed
+\subsubsection*{V4: Existence of Zero}
+Let $\underline{x}\in \mathbb{V}$, then we note that:$$\begin{bmatrix} 
+x_{1}\\x_{2}
+\end{bmatrix}\oplus\begin{bmatrix} 
+3\\-1
+\end{bmatrix}=\begin{bmatrix} 
+x_{1}\cancel{(+3)-3}\\
+x_{2}\cancel{(-1)+1}
+\end{bmatrix}=\begin{bmatrix} 
+x_{1}\\x_{2}
+\end{bmatrix}$$\\
+Thus $\underline{0}$ exists and specifically $\underline{0}=\begin{bmatrix} 
+3\\-1
+\end{bmatrix}$, therefore Existence of Zero is satisfied
+\subsubsection*{V5: Additive Inverse}
+Let $\underline{x}\in\mathbb{V}$, then we not that: $$\begin{bmatrix} 
+x_{1}\\
+x_{2}
+\end{bmatrix}\oplus\begin{bmatrix} 
+6-x_{1}\\-2-x_{2}
+\end{bmatrix}=\begin{bmatrix} 
+x_{1}+(6-x_{1})-3\\
+x_{2}+(-2-x_{2})+1
+\end{bmatrix}=\begin{bmatrix} 
+3\\-1
+\end{bmatrix}=\underline{0}$$
+Thus the Additive Inverse ($\underline{-x}$) exists and specifically $\underline{-x}=\begin{bmatrix} 
+6-x_{1}\\
+-2-x_{2}
+\end{bmatrix}$, therefore Additive Inverse is satisfied.
+\subsubsection*{V6: Closer Under Scalar Multiplication}
+Let $\underline{x}\in \mathbb{V}=\mathbb{R}^{2}$ and $t \in \mathbb{R}$, then we note that: $$s\odot \underline{x}=\begin{bmatrix} 
+tx_{1}-3t+3\\
+tx_{2}+t-1
+\end{bmatrix}$$
+Since $t\odot \underline{x}$ is a 2 dimensional vector composed of real numbers, $t \odot \underline{x}\in \mathbb{V}=\mathbb{R}^{2}$, therefore Closure Under Scalar Multiplication is satisfied.
+\subsubsection*{V7: Associativity of Scalar Multiplication}
+Let $\underline{x}\in\mathbb{V}$ and $s,t\in\mathbb{R}$, then we compute $s\odot(t\odot\underline{x})$ and $(st)\odot\underline{x}$, we have:\\
+\begin{table}[htp]
+\centering
+\begin{tabular}{cclc|cccc}
+  $s\odot(t\odot\underline{x})$ & $=$  & $s\odot\begin{bmatrix} tx_{1}-3t+3\\tx_{2}+t-1\end{bmatrix}$  &   & $(st)\odot\underline{x}$  & $=$  & $\begin{bmatrix} 
+  stx_{1}-3st+3\\stx_{2}+st-1
+  \end{bmatrix}$  &   \\
+  &&&&&&&\\
+      & $=$  & $\begin{bmatrix} s(tx_{1}-3t+3)-3s+3\\s(tx_{2}+t-1)+s-1\end{bmatrix}$  &  & &   &   &   \\
+      &&&&&&&\\    
+      & $=$  & $\begin{bmatrix} stx_{1}-3st\cancel{+3s-3s}+3\\stx_{2}+st\cancel{-s+s}-1\end{bmatrix}$  & &  &   &   &   \\
+    &&&&&&&\\  
+      & $=$  & $\begin{bmatrix} stx_{1}-3st+3\\stx_{2}+st-1\end{bmatrix}$  &   & &  &   &   \\
+\end{tabular}
+\end{table}\\
+We observe that $s\odot(t\odot\underline{x}) = (st)\odot\underline{x}$ therefore Associativity of Scalar Multiplication is satisfied.
+\subsubsection*{V8: Distributivity of Scalar Addition}
+Let $\underline{x}\in\mathbb{V}$, and $s,t\in\mathbb{R}$, then we compute $(s+t)\odot\underline{x}$ and $(s\odot\underline{x})\oplus(t\odot\underline{x})$, we have:
+\begin{table}[htp]
+\centering
+\begin{tabular}{cclc|cclc}
+  $(s+t)\odot\underline{x}$ & $=$  & $\begin{bmatrix} (s+t)x_{1}-3(s+t)+3\\(s+t)x_{2}+(s+t)-1\end{bmatrix}$  &   & $(s\odot\underline{x})\oplus(t\odot\underline{x})$  & $=$  & $\begin{bmatrix} sx_{1}-3s+3\\sx_{2}+s-1\end{bmatrix}$  &   \\
+  &&&&&&&\\ 
+  &   &   &   &   & $=$  & $\begin{bmatrix} (sx_{1}-3s+3)+(tx_{1}-3t+3)-3\\(sx_{2}+s-1)+(tx_{2}+t-1)+1\end{bmatrix}$  &   \\
+  &&&&&&&\\ 
+  &   &   &   &   & $=$  & $\begin{bmatrix} sx_{1}-3s+3+tx_{1}-3t\cancel{+3-3}\\sx_{2}+s-1+tx_{2}+t\cancel{-1+1}\end{bmatrix}$  &   \\
+  &&&&&&&\\ 
+  &   &   &   &   & $=$  & $\begin{bmatrix} sx_{1}+tx_{1}-3s-3t+3\\sx_{2}+tx_{2}+s+t-1\end{bmatrix}$  &   \\
+  &&&&&&&\\ 
+  &   &   &   &   & $=$  & $\begin{bmatrix} (s+t)x_{1}-3(s+t)+3\\(s+t)x_{2}+(s+t)-1\end{bmatrix}$  &   \\
+\end{tabular}
+\end{table}\\
+We observe that $(s+t)\odot\underline{x}=(s\odot\underline{x})\oplus(t\odot\underline{x})$ therefore Distirbutivity of Scalar Addition is satisfied.
+\subsubsection*{V9: Distirbutivity of Addition}
+Let $\underline{x},\underline{y}\in\mathbb{V}$, and $t\in\mathbb{R}$ then we compute $t\odot(\underline{x}\oplus\underline{y})$ and $(t\odot\underline{x})\oplus(t\odot\underline{y})$
+\begin{table}[htp]
+\centering
+\begin{tabular}{cclc|cclc}
+  $t\odot(\underline{x}\oplus\underline{y})$ & $=$  & $t\odot\begin{bmatrix} x_{1}+y_{1}-3\\x_{2}+y_{2}+1\end{bmatrix}$  &   & $(t\odot\underline{x})\oplus(t\odot\underline{y})$  & $=$  & $\begin{bmatrix} tx_{1}-3t+3\\tx_{2}+t-1\end{bmatrix}\oplus\begin{bmatrix} ty_{1}-3t-3\\ty_{2}+t-1\end{bmatrix}$  &   \\
+   & $=$  & $\begin{bmatrix} t(x_{1}+y_{1}-3)-3t+3\\t(x_{2}+y_{2}+1+)+t-1\end{bmatrix}$  &   &   & $=$  & $\begin{bmatrix} (tx_{1}-3t+3)+(ty_{1}-3t+3)-3\\(tx_{2}+t-1)+(ty_{2}+s-1)+1\end{bmatrix}$  &   \\
+   &&&&&&&\\
+   &   &   &   &   &  $=$ & $\begin{bmatrix} tx_{1}-3t+3+ty_{1}-3t\cancel{+3-3}\\tx_{2}+t-1+ty_{2}+t\cancel{-1+1}\end{bmatrix}$  &   \\
+   &&&&&&&\\
+   &   &   &   &   &  $=$ & $\begin{bmatrix} tx_{1}-3t+3+ty_{1}-3t\\tx_{2}+t-1+ty_{2}+t\end{bmatrix}$  &   \\
+   &&&&&&&\\
+   &   &   &   &   &  $=$ & $\begin{bmatrix} (tx_{1}+ty_{1}-3t)-3t+3\\(tx_{2}+ty_{2}+t)+t-1\end{bmatrix}$ &  \\
+   &&&&&&&\\
+   &   &   &   &   &  $=$ & $\begin{bmatrix} t(x_{1}+y_{1}-3)-3t+3\\t(x_{2}+y_{2}+1)+t-1\end{bmatrix}$ &  \\
+\end{tabular}
+\end{table}\\
+We observe that $t\odot(\underline{x}\oplus\underline{y}) = (t\odot\underline{x})\oplus(t\odot\underline{y})$ therefore Distributivity of Addition is satisfied.
+\newpage
+\subsubsection*{V10: 1 is the Scalar Identity}
+Let $\underline{x}\in\mathbb{V}$, then we compute $1\odot\underline{x}$:\\
+\begin{table}[htp]
+\centering
+\begin{tabular}{ccl}
+ $1\odot\underline{x}$& $=$  & $\begin{bmatrix} 
+ x_{1}\cancel{-3(1)+3}\\
+ x_{2}\cancel{+(1)-1}
+ \end{bmatrix}$  \\
+ &&\\
+ & $=$ & $\begin{bmatrix} 
+ x_{1}\\x_{2}
+ \end{bmatrix}$  \\
+\end{tabular}
+\end{table}\\
+We observe that $1\odot\underline{x}=\underline{x}$ thus 1 is the Scalar Identity is satisfied
+
+
+\newpage
+\section*{Question 2:}
+\subsection*{a)}
+To find the zero vector in the vector space given by: $$\mathbb{V}=\left\{ \begin{bmatrix} 
+x_{1}\\x_{2}
+\end{bmatrix} \middle|\;\; x_{1} > 0 \right\}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\begin{bmatrix} 
+x_{1}\\x_{2}
+\end{bmatrix}\oplus\begin{bmatrix} 
+y_{1}\\y_{2}
+\end{bmatrix}=\begin{bmatrix} 
+x_{1}y_{1}\\
+x_{1}+y_{2}
+\end{bmatrix}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;k\odot\begin{bmatrix} 
+x_{1}\\x_{2}
+\end{bmatrix}=\begin{bmatrix} 
+(x_{1})^{k}\\kx_{2}
+\end{bmatrix}$$
+We setup the equation $\underline{0}\oplus\underline{x}=\underline{x}$ and solve for $\underline{0}$, we have that:
+$$\begin{bmatrix} 
+0_{1}\\
+0_{2}
+\end{bmatrix}\oplus\begin{bmatrix} 
+x_{1}\\x_{2}
+\end{bmatrix}
+=
+\begin{bmatrix} 
+0_{1}x_{1}\\
+0_{2}+x_{2}
+\end{bmatrix}=\begin{bmatrix} 
+x_{1}\\x_{2}
+\end{bmatrix}$$
+Which yields the equations: $$\begin{cases}
+0_{1}x_{1}=x_{1}\\
+0_{2}+x_{2}=x_{2}
+\end{cases}$$
+Thus we have that $0_{1}=1$ and that $0_{2}=0$ thus: $$\underline{0}=\begin{bmatrix} 
+0\\1
+\end{bmatrix}$$
+\subsection*{b)}
+To find the additive inverse we setup the equation $\underline{x}+\underline{-x}=\underline{0}$, we have that:
+$$\begin{bmatrix} 
+x_{1}\\x_{2}
+\end{bmatrix}\oplus\begin{bmatrix} 
+-x_{1}\\
+-x_{2}
+\end{bmatrix}=\begin{bmatrix} 
+x_{1}(-x_{1})\\
+x_{2}+(-x_{2})
+\end{bmatrix}=\begin{bmatrix} 
+1\\0
+\end{bmatrix}$$
+Which yields the equations: $$\begin{cases}
+x_{1}(-x_{1})=1\\
+x_{2}+(-x_{2})=0
+\end{cases}$$
+Thus we have that $-x_{1}=\frac{1}{x}$ and $(-x_{2})=-x_{2}$, thus:$$
+\underline{-x}=\begin{bmatrix} 
+1/x_{1}\\-x_{2}
+\end{bmatrix}$$
+\subsection*{c)}
+To prove that $\underline{v_{1}}=\begin{bmatrix} 
+2\\2
+\end{bmatrix}$ and $\underline{v_{2}}=\begin{bmatrix} 
+4\\1
+\end{bmatrix}$ form a basis for the vector space we need to show that they are linearly independent and that they spand the vector space:
+\subsubsection*{Linearly Independent i)}
+To show that $\left\{ \underline{v_{1}},\underline{v_{2}} \right\}$ is L.I we need to show that: $$t_{1}\odot\underline{v_{1}}\oplus t_{2}\odot \underline{v_2}=\underline{0}$$ We have that:$$\begin{aligned}
+   t_{1}\odot\begin{bmatrix} 
+      2\\2
+      \end{bmatrix}\oplus t_{2}\odot\begin{bmatrix} 
+      4\\1
+      \end{bmatrix}&=\begin{bmatrix} 
+      1\\0
+      \end{bmatrix}\\\begin{bmatrix} 
+2^{t_{1}}\\
+2t_{1}
+\end{bmatrix}\oplus\begin{bmatrix} 
+4^{t_{2}}\\
+t_{2}
+\end{bmatrix}&=\begin{bmatrix} 
+1\\0
+\end{bmatrix}\\
+\begin{bmatrix} 
+2^{t_{1}}4^{t_{2}}\\
+2t_{1}+t_{2}
+\end{bmatrix}&=\begin{bmatrix} 
+1\\0
+\end{bmatrix}
+\end{aligned}$$
+Which yieds the following equations: $$\begin{cases}
+2^{t_{1}}4^{t_{2}}=1\\
+2t_{1}+t_{2}=0
+\end{cases}$$
+We then transform the first equation as follows:
+\begin{table}[htp]
+\centering
+\begin{tabular}{ccc}
+  $2^{t_{1}}4^{t_{2}}$ & $=$  &  $2^{t_{1}}2^{2^{t_{2}}}$ \\
+   & $=$  & $2^{t_{1}}2^{2t_{2}}$  \\
+   & $=$  & $2^{t_{1+2t_{2}}}$  \\
+\end{tabular}
+\end{table}\\
+Then we have that: 
+\begin{table}[htp]
+\centering
+\begin{tabular}{rcl}
+  $2^{t_{1}+2t_{2}}$ & $=$  & $1$  \\
+  $\log_{2}(2^{t_{1}+2t_{2}})$ & $=$  & $\log_{2}(1)$  \\
+  $2t_{1}+2t_{2}$ & $=$  & $0$  \\
+\end{tabular}
+\end{table}\\
+Then we have the equations which correlate to the a matrix: $$\begin{cases}
+t_{1}+2t_{2}=0\\
+2t_{1}+t_{2}=0\\
+\end{cases}\;\;\;\;\rightarrow\;\;\;\;\left[\begin{array}{cc|c}
+1&2&0\\2&1&0
+\end{array}\right]$$
+Then we row reduce the matrix: $$\left[\begin{array}{cc|c}
+1&2&0\\
+2&1&0
+\end{array}\right]\begin{aligned}
+    R_{2}&-2R_{1}\\
+    &\rightarrow
+\end{aligned}\left[\begin{array}{cc|c}
+1&2&0\\
+0&-3&0
+\end{array}\right]\begin{aligned}
+    R_{2}&\times 1/3\\
+    &\rightarrow
+\end{aligned}\begin{bmatrix} 
+1&2&0\\
+0&1&0
+\end{bmatrix}\begin{aligned}
+    R_{1}&-2R_{2}\\
+    &\rightarrow
+\end{aligned}\left[\begin{array}{cc|c}
+1&0&0\\0&1&0
+\end{array}\right]$$
+Since the rank of the matrix is equal to the number of variables and the system is homogenous we can conclude that the only solution is the trivial solution thus it is linearly independent.
+\newpage
+\subsubsection*{Spans $\mathbb{V}$ ii)}
+We need to show that any $\underline{v}\in\mathbb{V}$ can be represented as a linear combination of the basis. We will do this by using the equations obtained from above and setting them to an arbitrary $\underline{v}\in\mathbb{V}$, we will also use the modified equation in which we obtained by taking the $\log$ of both sides, so we will take the $\log$ of the componenet, so: $$\begin{cases}
+t_{1}+2t_{2}=\log_{2}{x_{1}}\\
+2t_{1}+4t_{2}=x_{2}
+\end{cases}$$
+We now need to re-arrange the above equations in order for $t_{1}$ and $t_{2}$ to depend on $x_{1}$ and $x_{2}$, thus:$$\begin{aligned}
+    t_{1}+2t_{2}=\log_{2}x_{1}\\
+    t_{1}=\log_{2}x_{1}-2t_{2}
+\end{aligned}$$
+Now we use this value to substitute into the equation for $t_{2}$ as follows: $$\begin{aligned}
+    2t_{1}+t_{2}&=x_{2}\\
+    2(\log_{2}x_{1}-2t_{2})+t_{2}&=x_{2}\\
+    2\log_{2}x_{1}-4t_{2}+t_{2}&=x_{2}\\
+    2\log_{2}x_{1}-3t_{2}&=x_{2}\\
+    2\log_{2}x_{1}-x_{2}&=3t_{2}\\
+    \frac{2\log_{2}x_{1}-x_{2}}{3}&=t_{2}
+\end{aligned}$$
+Then we finally substitute the value of $t_{2}$ back into the equation for $t_{1}$ as such: $$t_{1}=\log_{2}x_{1}-2(\frac{2\log_{2}x_{1}-x_{2}}{3})\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;t_{2}=\frac{2\log_{2}x_{1}-x_{2}}{3}$$
+Thus since $t_{1}$ and $t_{2}$ can be represented uniquely using componenets of any vector we know that any vector in the space can be represented as a linear combination of the given basis vectors indicating that the basis vectors span all of $\mathbb{V}$. 
+\subsection*{d)}
+We need to find co-efficients $t_{1}$ and $t_{2}$ such that: $$t_{1}\odot\underline{v_{1}}\oplus t_{1}\odot\underline{v_{2}}=\begin{bmatrix} 
+16\\4
+\end{bmatrix}$$
+By utilising the same method of re-using the equations we have that:$$\begin{cases}
+t_{1}+2t_{2}=\log_{2}{16}=4\\
+2t_{1}+t_{2}=4
+\end{cases}$$
+We then create the matrix and row reduce it: $$\left[\begin{array}{cc|c}
+   1&2&4\\
+   2&1&4
+\end{array}\right]\begin{aligned}
+    R_{2}&-2R_{1}\\
+    &\rightarrow
+\end{aligned}\left[\begin{array}{cc|c}
+   1&2&4\\ 
+   0&-3&-4
+\end{array}\right]\begin{aligned}
+    R_{2}&\times -1/3\\
+    &\rightarrow
+\end{aligned}\left[\begin{array}{cc|c}
+1&2&4\\
+0&1&4/3
+\end{array}\right]\begin{aligned}
+    R_{1}&-2R_{1}\\
+    &\rightarrow
+\end{aligned}\left[\begin{array}{cc|c}
+1&0&4/3\\
+0&1&4/3
+\end{array}\right]$$
+Thus we have that:$$\frac{4}{3}\odot\underline{v_{1}}\oplus\frac{4}{3}\odot\underline{v_{2}}=\begin{bmatrix} 
+16\\4
+\end{bmatrix}$$
+\newpage
+\section*{Question 4:}
+\subsection*{a)}
+We need to represent each matrix of the basis of $A$ as a L.C of $B$. To solve all 4 systems at once we need to convert each matrix into a vector in $\mathbb{R}^{4}$, we will do this by using the vectorization mapping function, then we have that: 
+$$\text{vec}(A)=\begin{bmatrix} 
+1\\0\\-1\\0
+\end{bmatrix},\begin{bmatrix} 
+1\\0\\1\\0
+\end{bmatrix},\begin{bmatrix} 
+0\\1\\0\\-1
+\end{bmatrix},\begin{bmatrix} 
+0\\0\\-1\\-1
+\end{bmatrix}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\text{vec}(B)=\begin{bmatrix} 
+1\\1\\-2\\-2
+\end{bmatrix},\begin{bmatrix} 
+1\\-1\\1\\1
+\end{bmatrix},\begin{bmatrix} 
+2\\1\\-1\\-2
+\end{bmatrix},\begin{bmatrix} 
+-2\\1\\0\\-1
+\end{bmatrix}$$
+Then we can setup the multi augmented matrix $[\text{vec}(A)|\text{vec}(B)]$ and reduce it to RREF, then the matrix on the right will be the change of base matrix from $A$ to $B$:\\
+$\left[\begin{array}{cccc|cccc}
+1 & 1  & 2  & -2 &    1  &  1 & 0  & 0     \\
+1 & -1 & 1  & 1  &    0  &  0 & 1  & 0     \\
+-2 & 1 & -1 & 0  &    -1 &  1 & 0  & -1    \\
+-2 & 1 & -2 & -1 &    0  &  0 & -1 & -1 
+\end{array}\right]\;\;\;\;\;\begin{aligned}
+    R_2-R_1\\
+    R_3+2R_1\\
+    R_4+2R_1\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 1  & 2  & -2 &    1  &  1  & 0  & 0     \\
+0 & -2 & -1 & 3  &    -1 &  -1 & 1  & 0     \\
+0 & 3  & 3  & -4 &    1  &  3  & 0  & -1    \\
+0 & 3  & 2 & -5  &    2  &  2  & -1 & -1 
+\end{array}\right]\;\;\;\;\;\\\\\\\begin{aligned}
+    R_2\times -1/2\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 1  & 2   & -2  &    1  &  1  & 0  & 0     \\
+0 & 1 & 1/2 & -3/2&    1/2 &  1/2 & -1/2  & 0     \\
+0 & 3  & 3   & -4  &    1  &  3  & 0  & -1    \\
+0 & 3  & 2   & -5  &    2  &  2  & -1 & -1 
+\end{array}\right]\;\;\;\;\;\begin{aligned}
+    R_3-3R_2\\
+    R_4-3R_2\\
+    R_1-R_2\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 0  & 3/2 & -1/2  &    1/2  &  1/2  & 1/2  & 0     \\
+0 & 1  & 1/2 & -3/2   &    1/2 &  1/2 & -1/2  & 0     \\
+0 & 0  & 3/2 & 1/2   &   -1/2  &  3/2  & 3/2  & -1    \\
+0 & 0  & 1/2 & -1/2  &    1/2  &  1/2  & 1/2 & -1 
+\end{array}\right]\;\;\;\;\;\\\\\\\begin{aligned}
+    R_3\times 2/3\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 0  & 3/2 & -1/2  &    1/2  &  1/2  & 1/2  & 0     \\
+0 & 1  & 1/2 & 1/2   &    1/2 &  1/2 & -1/2  & 0     \\
+0 & 0  & 1   & 1/3   &   -1/3  &  1  & 1  & -2/3    \\
+0 & 0  & 1/2 & -1/2  &    1/2  &  1/2  & 1/2 & -1 
+\end{array}\right]\;\;\;\;\;\begin{aligned}
+    R_1-3/2R_3\\
+    R_2-1/2R_3\\
+    R_4-1/2R_3\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 0  & 0 & -1/2  &    1  &  -1  & -1  & 1     \\
+0 & 1  & 0 & 1/2   &    2/3 &  0 & -1  & 1/3     \\
+0 & 0  & 1   & 1/3   &   -1/3  &  1  & 1  & -2/3    \\
+0 & 0  & 0 & -2/3  &    2/3  &  0  & 0 & -2/3 
+\end{array}\right]\;\;\;\;\;\\\\\\\begin{aligned}
+    R_4\times -3/2\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 0  & 0 & -1/2  &    1  &  -1  & -1  & 1     \\
+0 & 1  & 0 & 1/2   &    2/3 &  0 & -1  & 1/3     \\
+0 & 0  & 1   & 1/3   &   -1/3  &  1  & 1  & -2/3    \\
+0 & 0  & 0 & 1  &    -1  &  0  & 0 & 1 
+\end{array}\right]\;\;\;\;\;\begin{aligned}
+    R_1+1/2R_4\\
+    R_2-1/2R_4\\
+    R_3-1/3R_4\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 0  & 0 & 0  &    0  &  -1  & -1  & 2     \\
+0 & 1  & 0 & 0   &    -1 &  0 & -1  & 2    \\
+0 & 0  & 1   & 0   &   0  &  1  & 1  & -1    \\
+0 & 0  & 0 & 1  &    -1  &  0  & 0 & 1 
+\end{array}\right]$\\
+Thus we have that the change of base matrix is: $$\begin{bmatrix} 
+   0  &  -1  & -1  & 2     \\
+   -1 &  0 & -1  & 2    \\
+   0  &  1  & 1  & -1    \\
+   -1  &  0  & 0 & 1 
+\end{bmatrix}$$
+\subsection*{b)}
+To find the change of base matrix from $B$ to $A$ we simply need to find the inverse of the change of base matrix from $A$ to $B$ as follows:
+$\left[\begin{array}{cccc|cccc}
+0  & -1 & -1 & 2    & 1 & 0  & 0 & 0    \\
+-1 & 0  & -1 & 2    & 0 & 1  & 0 & 0    \\
+0  & 1  &  1 & -1   & 0 & 0  & 1 & 0    \\
+-1 & 0  &  0 & 1   & 0 & 0  & 0 & 1 
+\end{array}\right]\;\;\;\;\;\begin{aligned}
+    R_1 \leftrightarrow R_2\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+-1 & 0  & -1 & 2    & 0 & 1  & 0 & 0    \\
+0  & -1 & -1 & 2    & 1 & 0  & 0 & 0    \\
+0  & 1  &  1 & -1   & 0 & 0  & 1 & 0    \\
+-1 & 0  &  0 & 1   & 0 & 0  & 0 & 1 
+\end{array}\right]\;\;\;\;\;\\\\\\\begin{aligned}
+    R_1 \times -1\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 0  & 1 & -2    & 0 & -1  & 0 & 0    \\
+0  & -1 & -1 & 2    & 1 & 0  & 0 & 0    \\
+0  & 1  &  1 & -1   & 0 & 0  & 1 & 0    \\
+-1 & 0  &  0 & 1   & 0 & 0  & 0 & 1 
+\end{array}\right]\;\;\;\;\;\begin{aligned}
+    R_4 + R_1\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 0  & 1 & -2    & 0 & -1  & 0 & 0    \\
+0  & -1 & -1 & 2    & 1 & 0  & 0 & 0    \\
+0  & 1  &  1 & -1   & 0 & 0  & 1 & 0    \\
+0 & 0  &  1 & -1   & 0 & -1  & 0 & 1 
+\end{array}\right]\;\;\;\;\;\\\\\\\begin{aligned}
+    R_2 \times -1\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 0  & 1 & -2    & 0 & -1  & 0 & 0    \\
+0  & 1 & 1 & -2    & -1 & 0  & 0 & 0    \\
+0  & 1  &  1 & -1   & 0 & 0  & 1 & 0    \\
+0 & 0  &  1 & -1   & 0 & -1  & 0 & 1 
+\end{array}\right]\;\;\;\;\;\begin{aligned}
+    R_3 - R_2\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 0  & 1 & -2    & 0 & -1  & 0 & 0    \\
+0  & 1 & 1 & -2    & -1 & 0  & 0 & 0    \\
+0  & 0  &  0 & 1   & 1 & 0  & 1 & 0    \\
+0 & 0  &  1 & -1   & 0 & -1  & 0 & 1 
+\end{array}\right]\;\;\;\;\;\\\\\\\begin{aligned}
+    R_3 \leftrightarrow R_4\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 0  & 1 & -2    & 0 & -1  & 0 & 0    \\
+0  & 1 & 1 & -2    & -1 & 0  & 0 & 0    \\
+0 & 0  &  1 & -1   & 0 & -1  & 0 & 1    \\
+0  & 0  &  0 & 1   & 1 & 0  & 1 & 0    
+\end{array}\right]\;\;\;\;\;\begin{aligned}
+    R_2-R_3\\
+    R_1-R_3\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 0  & 0 & -1    & 0 & 0  & 0 & -1    \\
+0  & 1 & 0 & -1    & -1 & 1  & 0 & -1    \\
+0 & 0  &  1 & -1   & 0 & -1  & 0 & 1    \\
+0  & 0  &  0 & 1   & 1 & 0  & 1 & 0    
+\end{array}\right]\;\;\;\;\;\\\\\\\begin{aligned}
+    R_1+R_4\\
+    R_2+R_4\\
+    R_3+R_4\\
+    \implies
+\end{aligned}\;\;\;\;\;\left[\begin{array}{cccc|cccc}
+1 & 0  & 0 & 0    & 1 & 0  & 1 & -1    \\
+0  & 1 & 0 & 0    & 0 & 1  & 1 & -1    \\
+0 & 0  &  1 & 0   & 1 & -1  & 1 & 1    \\
+0  & 0  &  0 & 1   & 1 & 0  & 1 & 0    
+\end{array}\right]$\\
+Thus we have that the change of base matrix from $B$ to $A$ is:$$\begin{bmatrix} 
+   1 & 0  & 1 & -1    \\
+   0 & 1  & 1 & -1    \\
+ 1 & -1  & 1 & 1    \\
+ 1 & 0  & 1 & 0  
+\end{bmatrix}$$
+
+\newpage
+\section*{Question 4:}
+\subsection*{a)}
+In order to prove linearity for $I$ and $D$ we need to show that they both have properties of Additivity and Homogenity:
+\subsubsection*{Prove Linearity for $I$: i)}
+\subsubsection*{Prove Additivity:}
+
+
+We must show that $I(p(x)+q(x))=I(p(x))+I(q(x))$, let $$\begin{aligned}
+    p(x)&=a_{0}+a_{1}x+a_{2}x^{2}+a_{3}x^{3}\\
+    q(x)&=b_{0}+b_{1}x+b_{3}x^{2}+b_{3}x^{3}
+\end{aligned}$$we have that: $$I(p(x)+q(x))=(a_{0}+b_{0})x+\frac{a_{1}+b_{1}}{2}x^{2}+\frac{a_{2}+b_{2}}{3}x^{3}+\frac{a_{3}+b_{3}}{4}x^{4}$$
+And that: $$\begin{aligned}
+   I(p(x))+I(q(x))&=(a_{0}x+\frac{a_{1}}{2}x^{2}+\frac{a_{2}}{3}x^{3}+\frac{a_{3}}{4}x^{4})+(b_{0}x+\frac{b_{1}}{2}x^{2}+\frac{b_{2}}{3}x^{3}+\frac{b_{3}}{4}x^{4})\\
+   &=a_{0}x+\frac{a_{1}}{2}x^{2}+\frac{a_{2}}{3}x^{3}+\frac{a_{3}}{4}x^{4}+b_{0}x+\frac{b_{1}}{2}x^{2}+\frac{b_{2}}{3}x^{3}+\frac{b_{3}}{4}x^{4}\\
+   &=a_{0}+b_{0}+\frac{a_{1}}{2}x^{2}+\frac{b_{1}}{2}x^{2}+\frac{a_{2}}{3}x^{3}+\frac{b_{2}}{3}x^{3}+\frac{a_{3}}{4}x^{4}+\frac{a_{3}}{4}x^{4}\\
+   &=(a_{0}+b_{0})x+\frac{a_{1}+b_{1}}{2}x^{2}+\frac{a_{2}+b_{2}}{3}x^{3}+\frac{a_{3}+b_{3}}{4}x^{4}
+\end{aligned}$$
+Thus we observe that $I(p(x)+q(x))=I(p(x))+I(q(x))$ thus $I$ satisfies Additivity.
+\subsubsection*{Prove Homogenity:}
+We must show that $I(t\cdot p(x))=t\cdot I(p(x))$, let $t\in\mathbb{R}$ and $$\begin{aligned}
+    p(x)&=a_{0}+a_{1}x+a_{2}x^{2}+a_{3}x^{3}\\
+\end{aligned}$$we have that:$$\begin{aligned}
+   I(t\cdot p(x))&=I(ta_{0}+ta_{1}x+ta_{2}x^{2}+ta_{3}x^{3})\\
+&=(ta_{0}x+\frac{ta_{1}}{2}x^{2}+\frac{ta_{2}}{3}x^{3}+\frac{ta_{3}}{4}x^{4})
+\end{aligned}$$
+And that: $$\begin{aligned}
+    t\cdot I(p(x))&=t\cdot (a_{0}x+\frac{a_{1}}{2}x^{2}+\frac{a_{2}}{3}x^{3}+\frac{a_{3}}{4}x^{4})\\
+    &=(ta_{0}x+\frac{ta_{1}}{2}x^{2}+\frac{ta_{2}}{3}x^{3}+\frac{ta_{3}}{4}x^{4})
+\end{aligned}$$
+We observe that $I(t\cdot p(x))=t\cdot I(p(x))$, thus Homogenity is satisfied for $I$\\
+Since $I$ satisfies both Additivity and Homogenity, it is a linear mapping.
+\subsubsection*{Prove Linearity for $D$ ii)}
+\subsubsection*{Prove Additivity:}
+We must show that $D(p(x)+q(x))=D(p(x))+I(q(x))$, let $$\begin{aligned}
+   p(x)&=a_{0}+a_{1}x+a_{2}x^{2}+a_{3}x^{3}\\
+   q(x)&=b_{0}+b_{1}x+b_{3}x^{2}+b_{3}x^{3}
+\end{aligned}$$
+Then we have that $$\begin{aligned}
+    D(p(x)+q(x))&= (a_{0}+b_{0})+(a_{1}+b_{1})x+2(a_{2}+b_{2})x^{2}+(a_{3}+b_{3})x^{3}
+\end{aligned}$$
+And that: $$\begin{aligned}
+    D(p(x))+D(q(x))&=(a_{1}+2a_{2}x+3a_{3}x^{2})+(b_{1}+2b_{2}x+3b_{3}x^{2})\\
+    &=a_{1}+2a_{2}x+3a_{3}x^{2}+b_{1}+2b_{2}x+3b_{3}x^{2}\\
+    &=a_{1}+b_{1}+2a_{2}x+2b_{2}x+3a_{3}x^{2}+3b_{3}x^{2}\\
+    &=(a_{0}+b_{0})+(a_{1}+b_{1})x+2(a_{2}+b_{2})x^{2}+(a_{3}+b_{3})x^{3}
+\end{aligned}$$
+We observe that: $D(p(x)+q(x))=D(p(x))+I(q(x))$ thus Additivity is satisfied for $D$
+\subsubsection*{Prove Homogenity:}
+We must show that $D(c\cdot p(x))=c\cdot D(p(x))$, let $c\in\mathbb{R}$ and:
+$$\begin{aligned}
+   p(x)&=a_{0}+a_{1}x+a_{2}x^{2}+a_{3}x^{3}\\
+\end{aligned}$$
+Then we have that: $$\begin{aligned}
+   c\cdot D(p(x)) &= c\cdot (a_{1}+2a_{2}x+3a_{3}x^{2})
+\end{aligned}$$
+And that: $$\begin{aligned}
+    D(c\cdot p(x))&=D(ca_{0}+ca_{1}x+ca_{2}x^{2}+ca_{3}x^{3})\\
+    &=ca_{1}+2(ca_{2})+3(ca_{3})\\
+    &= c\cdot (a_{1}+2a_{2}x+3a_{3}x^{2})
+\end{aligned}$$
+We observe that $D(c\cdot p(x))=c\cdot D(p(x))$ and thus Homogenity is satisfied for $D$
+Since $D$ satisfies both Additivity and Homogenity, it is a linear mapping.
+\newpage
+\subsubsection*{b)}
+In order to prove linearity for $D$ we need to show that it has properties of Additivity and Homogenity:
+\subsubsection*{Proving Additivity:}
+We must show that $T(p(x)+q(x))=T(p(x))+T(q(x))$, 
+\begin{table}[htp]
+\centering
+\begin{tabular}{ccc}
+  $T(p(x)+q(x))$ & $=$  &   \\
+   &   &   \\
+   &   &   \\
+   &   &   \\
+   &   &   \\
+\end{tabular}
+\end{table}\\
+
+Didn't have enough time to put into latex im sorry, its the photos a probably messy but the work is there ):
+
+
+
 
 \end{document}
