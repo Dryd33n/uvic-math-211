@@ -1,0 +1,319 @@
+\documentclass{article}
+\usepackage[legalpaper, portrait, margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+
+\title{Math 211 Assignment 5}
+\author{Dryden Bryson}
+\date{Thursday 28th of November}
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{Question 1:}
+We will first start by performing row operations to reduce row 1 to a row containing only $x$:
+$$\begin{vmatrix}
+x&3&4\\
+x^{2}&9&16\\
+7&x+4&x+3
+\end{vmatrix}\;\;\begin{aligned}
+    &\rightarrow\\
+    C_{3}&-\frac{4}{3}C_{2}
+\end{aligned}\;\;\begin{vmatrix}
+x&3&0\\
+x^{2}&9&4\\
+7&x+4&\frac{-x-7}{3}
+\end{vmatrix}\;\;\begin{aligned}
+    &\rightarrow\\
+    C_{2}&-\frac{3}{x}C_{1}
+\end{aligned}\;\;\begin{vmatrix}
+    x&0&0\\
+    x^{2}&9-3x&4\\
+    7&x+4-\frac{21}{x}&\frac{-x-7}{3}
+    \end{vmatrix}
+$$
+Thus by the cofactor expansion formula we have that:
+$$p(x)=x\cdot \begin{vmatrix}
+9-3x&4\\
+x+4-\frac{21}{x}&\frac{-x-7}{3}
+\end{vmatrix}$$
+Then by the formula for the determinant of a $2\times 2$ matrix we have that:
+\begin{table}[htp]
+\centering
+\begin{tabular}{cccclc}
+  $p(x)$ & $=$ & $x\cdot \begin{vmatrix}9-3x&4\\x+4-\frac{21}{x}&\frac{-x-7}{3} \end{vmatrix}$ & $=$ & $x\cdot ((9-3x)(\frac{-x-7}{3})-4(x+4-\frac{21}{x}))$  &   \\
+        && & $=$ & $x\cdot (\frac{(9-3x)(-x-7)}{3}-(4x+16-\frac{84}{x}))$  &   \\
+        && & $=$ & $x\cdot (\frac{3x^{2}+12x-63}{3}-(4x+16-\frac{84}{x}))$  &   \\
+        && & $=$ & $x\cdot ((x^{2}+4x-21)-(4x+16-\frac{84}{x}))$  &   \\
+        && & $=$ & $x\cdot (x^{2}+4x-21-4x-16+\frac{84}{x})$  &   \\
+        && & $=$ & $x\cdot (x^{2}-37+\frac{84}{x})$  &   \\
+        && & $=$ & $x^{3}-37x+84x$  &   \\
+\end{tabular}
+\end{table}\\
+Now it suffices to find the roots of: $$p(x)=x^{3}-37x+84x$$
+Through the use of the rational root theorem we can identify $3$ as one of the roots, thus we can perform synthetic division to form a quadratic which we can solve using the quadratic formula, we need to perform: $$(x^{3}-37x+84) \div (x-3)$$
+The following synthetic division table: 
+$$\begin{array}{r|rrrr}
+3 & 1 & 0 & -37 & 84 \\
+  &   & 3 & 9    & -84 \\
+\hline
+  & 1 & 3 & -28  & 0 \\
+\end{array}$$
+We have that the factor expression is: $$(x-3)(x^{2}+3x-28)$$
+By using the quadratic formula on $(x^{2}+3x-28)$ we have that the remaining roots are, $4$ and $-7$ which gives us: $$p(x)=\begin{vmatrix}
+    x&3&4\\
+    x^{2}&9&16\\
+    7&x+4&x+3
+    \end{vmatrix}=x^{3}-37x+84x=(x-3)(x-4)(x+7)$$
+    Thus we have that the roots of $p(x)$ are $3$,$4$ and $-7$
+
+\newpage
+\section*{Question 2:}
+\subsection*{a)}
+Since we know that if two matrices have the same characteristic polynomial then they have the same eigen values. Thus it suffices to show that $A$ and $A^{T}$ have the same characteristic polynomial. The characteristic polynomial of $A^{T}$is $(A^{T}-\lambda I)$\\\\ 
+We will first demonstrate that: $(\lambda I)^{T}=(\lambda I)$ we can observe this visually: 
+$$(\lambda I) = 
+\begin{bmatrix} 
+\lambda & 0 & 0 & \cdots & 0 \\ 
+0 & \lambda & 0 & \cdots & 0 \\ 
+0 & 0 & \lambda & \cdots & 0 \\ 
+\vdots & \vdots & \vdots & \ddots & \vdots \\ 
+0 & 0 & 0 & \cdots & \lambda 
+\end{bmatrix}\;\;\;\;\;\;\;(\lambda I)^T = 
+\begin{bmatrix} 
+\lambda & 0 & 0 & \cdots & 0 \\ 
+0 & \lambda & 0 & \cdots & 0 \\ 
+0 & 0 & \lambda & \cdots & 0 \\ 
+\vdots & \vdots & \vdots & \ddots & \vdots \\ 
+0 & 0 & 0 & \cdots & \lambda 
+\end{bmatrix}$$
+Which makes sense since the matrices are diagonally symmtrical, thus clearly: $(\lambda I)^{T}=(\lambda I)$. We can proceed with the property of "Determinant of Transpose" where: $$\left\vert A^{T} \right\vert = \left\vert A \right\vert $$
+Thus we have that $$\left\vert A-\lambda I \right\vert = \left\vert (A-\lambda I )^{T} \right\vert $$
+And then by the transpose property of matrix addition we have that: $$\left\vert A-\lambda I \right\vert = \left\vert A^{T}-(\lambda I)^{T}  \right\vert $$
+and since we have shown that $(\lambda I)^{T}=(\lambda I)$ we have that: $$\left\vert A-\lambda I \right\vert = \left\vert A^{T}-\lambda I  \right\vert $$
+Which demonstrates that the characteristic polynomial of a matrix is the same as the characteristic polynomial for the transposed matrix, thus the matrices $A$ and $A^{T}$ will have the same eigen values. $\square$
+\subsubsection*{b)}
+We have that $A\vec{v}=\lambda \vec{v}$ and we want to show that $(A-kI)\vec{v}=(\lambda-k)\vec{v}$,  thus we will being by observing the matrix $A-kI$ acting on $\vec{v}$:
+\begin{table}[htp]
+\centering
+\begin{tabular}{ccll}
+  $(A-kI)\vec{v}$ & $=$  & $A\vec{v}-kI\vec{v}$        & Right Distributivity of Matrix Multiplication \\
+                  & $=$  & $A\vec{v}-k\vec{v}$         & Multiplication of identity matrix ($IM=M$)\\
+                  & $=$  & $\lambda\vec{v}-k\vec{v}$   & Substitution from given information ($A\vec{v}=\lambda\vec{v}$)  \\
+                  & $=$  & $(\lambda-k)\vec{v}$        & Right Distributivity of Matrix Multiplication  \\
+\end{tabular}
+\end{table}\\
+We have shown that: $(A-kI)\vec{v}=(\lambda-k)\vec{v}$ or that $\vec{v}$ is an eigen vector of the matrix $A-kI$ with and eigen value of $\lambda -k$. $\square$
+\subsubsection*{c)}
+Since $A$ is idempotent we have that: $$A=A^{2}\Rightarrow A\vec{v}=A^{2}\vec{v}$$
+Next we can represent $A^{2}$ as follows: 
+\begin{table}[htp]
+\centering
+\begin{tabular}{ccll}
+  $A^{2}\vec{v}$ & $=$ &  $A(A\vec{v})$ & Definition of exponentiation  \\
+                 & $=$ &  $A(\lambda \vec{v})$ & Subsitution from eigenvalue equation $A\vec{v}=\lambda\vec{v}$  \\
+                 & $=$ &  $\lambda(A\vec{v})$  & Associativity of Scalars  \\
+                 & $=$ &  $\lambda(\lambda\vec{v})$ &   Subsitution from eigenvalue equation $A\vec{v}=\lambda\vec{v}$\\
+                 & $=$ &  $\lambda^{2}\vec{v}$ &  Definition of exponentiation\\
+\end{tabular}
+\end{table}\\
+We can connect the two equations which yeilds: $$A\vec{v}=A^{2}\vec{v}=\lambda^{2}\vec{v}$$
+Then we can form and simplify the following eigenvalue equation: 
+\begin{table}[htp]
+\centering
+\begin{tabular}{rcll}
+ $A\vec{v}$        & $=$ & $\lambda^{2}\vec{v}$ & From above equation  \\
+ $\lambda \vec{v}$ & $=$ & $\lambda^{2} \vec{v}$  & Substitution from eigenvalue equation  \\
+ $\lambda \vec{v} - \lambda^{2} \vec{v}$            & $=$ & $0$  &  Subtract $\lambda^{2}\vec{v}$ from both sides\\
+ $(\lambda  - \lambda^{2}) \vec{v}$            & $=$ & $0$  &  Distributivity of Scalar Addition \\
+ $(\lambda  - \lambda^{2})$            & $=$ & $0$  &  Divide both sides by $\vec{v}$ \\
+ $\lambda(1  - \lambda)$            & $=$ & $0$  &  Distributivity \\
+\end{tabular}
+\end{table}\\
+Then trivially we can see how the only possible values for $\lambda$ are 0 and 1, since $\lambda(1-\lambda)=0$ thus $\lambda_{1}=0, \lambda_{2}=1$. $\square$
+
+\newpage
+\section*{Question 3:}
+\subsection*{a)}
+We will begin with the cofactor decomposition of $A-\lambda I$ along the first row, which is as follows:
+$$\begin{vmatrix}
+1-\lambda & 3 & 3\\
+-3 & -5-\lambda & -3\\
+3 & 3& 1-\lambda
+\end{vmatrix}=1-\lambda\begin{vmatrix}
+-5-\lambda& -3\\
+3 & 1-\lambda
+\end{vmatrix}-3\begin{vmatrix}
+-3 & -3 \\
+3 & 1-\lambda
+\end{vmatrix}+3\begin{vmatrix}
+-3 & -5-\lambda \\
+3 & 3
+\end{vmatrix}$$
+Let us then compute the sub-determinants:\\ 
+i) $\begin{aligned}
+    \begin{vmatrix}
+        -5-\lambda& -3\\
+        3 & 1-\lambda
+        \end{vmatrix} &= (1-\lambda)(-5-\lambda)-(3\cdot -3)\\
+        &=\lambda^{2}+4\lambda-5+9\\
+        &=\lambda^{2}+4\lambda+4\\
+        &=(\lambda+2)(\lambda+2)   
+\end{aligned}$\\\\\\ii) $\begin{aligned}
+    \begin{vmatrix}
+        -3 & -3 \\
+        3 & 1-\lambda
+        \end{vmatrix} &= -3(1-\lambda)-(3\cdot -3)\\
+        &= -3+3\lambda+9\\
+        &=3\lambda+6
+\end{aligned}$\\\\\\iii) $\begin{aligned}
+    \begin{vmatrix}
+        -3 & -5-\lambda \\
+        3 & 3
+        \end{vmatrix} &= (3\cdot -3)-3(-5-\lambda)\\
+        &=-9+15+3\lambda\\
+        &=3\lambda+6
+\end{aligned}$\\\\
+Which gives us the entire equation: 
+$$\begin{vmatrix}
+1-\lambda & 3 & 3\\
+-3 & -5-\lambda & -3\\
+3 & 3& 1-\lambda
+\end{vmatrix}=1-\lambda(\lambda+2)(\lambda+2) \cancel{-3(3\lambda+6)}\cancel{+3(3\lambda+6)}$$
+Thus we have that the simplified characteristic polynomial is: $$(1-\lambda)(\lambda+2)(\lambda+2)$$
+Which gives us the following eigen values: $\lambda_{1}=\lambda_{2}=-2,\lambda_{3}=1$
+\newpage
+\subsection*{b)}
+We need to setup the homogenous equations $(A-\lambda I)\vec{v}=0$ for each $\lambda$
+\subsubsection*{Case i) $\lambda=-2$}
+We have that: $$A-(-2)I=\begin{bmatrix} 
+3&3&3\\
+-3&-3&-3\\
+3&3&3
+\end{bmatrix}$$ Thus we form the homogenous system and reduce it: $$\left[\begin{array}{ccc|c}
+    3&3&3&0\\
+    -3&-3&-3&0\\
+    3&3&3&0
+\end{array}\right]\begin{aligned}
+    R_{2}&+R_{1}\\
+    R_{3}&-R_{1}\\
+    &\rightarrow
+\end{aligned}\left[\begin{array}{ccc|c}
+3&3&3&0\\
+0&0&0&0\\
+0&0&0&0\\
+\end{array}\right]\begin{aligned}
+    R_{1}&\cdot \frac{1}{3}\\
+    &\rightarrow
+\end{aligned}\left[\begin{array}{ccc|c}
+    1&1&1&0\\
+    0&0&0&0\\
+    0&0&0&0\\
+    \end{array}\right]$$
+    Thus we have that $v_{1}+v_{2}+v_{3}=0$, let $v_{2}=s, v_{3}=t$ thus we have the system: $$\begin{cases}
+    v_{1}=-s-t\\
+    v_{2}=s\\
+    v_{3}=t
+    \end{cases}$$
+    And so: $$
+    \vec{v}=\begin{bmatrix} 
+    -s-t\\s\\t
+    \end{bmatrix}=s\begin{bmatrix} 
+    -1\\1\\0
+    \end{bmatrix}+t\begin{bmatrix} 
+    -1\\0\\1
+    \end{bmatrix}\;\;\;\;\;\;\;\;\;\text{thus:}\;\;\;\;\;\vec{v_{1}}=\begin{bmatrix} 
+    -1\\1\\0
+    \end{bmatrix},\;\;\vec{v_{2}}=\begin{bmatrix} 
+    -1\\0\\1
+    \end{bmatrix}$$
+\subsubsection*{Case ii) $\lambda = 1$}
+We have that: $$A-(1)I=\begin{bmatrix}
+0&3&3\\
+-3&-6&-3\\
+3&3&0
+\end{bmatrix}$$
+Thus we form the homogenous system and reduce it: $$
+\left[\begin{array}{ccc|c}
+        0&3&3 & 0\\
+    -3&-6&-3 & 0\\
+    3&3&0 & 0
+    \end{array}\right]\begin{aligned}
+        R_{2}&+R_{1}\\
+        &\rightarrow\\
+        R_{2}&+R_{3}
+    \end{aligned}\left[\begin{array}{ccc|c}
+        0 & 3 & 3 & 0\\
+    0 & 0 & 0 & 0\\
+    3 & 3& 0 & 0
+    \end{array}\right]\begin{aligned}
+        R_{3}&-R_{1}\\
+        &\rightarrow
+    \end{aligned}\left[\begin{array}{ccc|c}
+        0 & 3 & 3 & 0\\
+    0 & 0 & 0 & 0\\
+    3 & 0 & -3 & 0\\
+    \end{array}\right]\begin{aligned}
+        R_{1} &\leftrightarrow R_{2}\\
+        &\rightarrow\\
+        R_{3} &\leftrightarrow R_{1}
+    \end{aligned}\left[\begin{array}{ccc|c}
+    3 & 0 & -3 & 0\\
+    0 & 3 & 3 & 0\\
+    0 & 0 & 0 & 0
+    \end{array}\right]\begin{aligned}
+        R_{1}& \cdot 1/3\\
+        & \rightarrow\\
+        R_{2} &\cdot 1/3
+    \end{aligned}\left[\begin{array}{ccc|c}
+    1 & 0 & -1 & 0\\
+    0 & 1 & 1 & 0\\
+    0 & 0 & 0 & 0
+    \end{array}\right]$$
+Thus we have that: $v_{1}-v_{3}=0$ and $v_{2}+v_{3}=0$. Let $v_{3}=t$ thus we have the system: $$\begin{cases}
+v_{1}=t\\
+v_{2}=-t\\
+v_{3}=t
+\end{cases}$$ And so:
+$$\vec{v}=\begin{bmatrix} 
+t\\-t\\t
+\end{bmatrix}=t\begin{bmatrix} 
+1\\-1\\1
+\end{bmatrix}\;\;\;\;\;\;\;\;\;\text{thus:}\;\;\;\;\;v_{3}=\begin{bmatrix} 
+1\\-1\\1
+\end{bmatrix}$$
+Thus we have the following eigenpairs: $$
+\lambda_{1}=\lambda_{2}=-2,\vec{v_{1}}=\begin{bmatrix} 
+-1\\1\\0
+\end{bmatrix},\vec{v_{2}}=\begin{bmatrix} 
+-1\\0\\1
+\end{bmatrix}\;\;\text{and}\;\;\lambda_{3}=1,\vec{v_3}=\begin{bmatrix} 
+1\\-1\\1
+\end{bmatrix}$$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\subsubsection*{\textbf{\underline{$A$ is Diagonalizable:}}}
+Per the diagonalization theorem, our $3\times 3$ matrix $A$ can be diagonalized if and only if our eigenvectors form a basis for $\mathbb{R}^{3}$. 
+We know they form a basis if the system is not defficient and since our matrix has a geometric and algebreaic multiplicity of $3$, $A$ is not defficient 
+and therefore the eigenvectors are linearly independent and form a basis for $\mathbb{R}^{3}$. As a result the matrix is diagonalizable. 
+
+\newpage
+\subsection*{c)}
+We aim to construct $A=PDP^{-1}$ and we have that: $$D=\begin{bmatrix} 
+-2 & 0 & 0\\
+0 & -2 & 0\\
+0 & 0 & -2\\
+\end{bmatrix}\;\;\;\;\;\;\;\;P=\begin{bmatrix} 
+-1 & -1 & 1\\
+1 & 0 & -1\\
+0 & 1 & 1
+\end{bmatrix}$$
+and thus it suffice to find $P^{-1}$ in order to find the diagonalization $A=PDP^{-1}$. 
+To compute $P^{-1}$ we set up the augmented matrix $[P|I]$ and reduce as follows: $$\left[\begin{array}{ccc|ccc}
+-1&-1&1      &      1&0&0\\
+1&0&-1       &      0&1&0\\
+0&1&1        &      0&0&1
+\end{array}\right]$$
+    
+
+\end{document}
