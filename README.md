@@ -1,3 +1,17 @@
+# MATH 211
+LaTex files for assignments from UVic math 211, covering topics such as:
+- **Vector Spaces and Subspaces**: Definitions, axioms, and properties such as closure under addition and scalar multiplication.
+- **Linearity and Linear Transformations**: Proofs of linearity, computation of linear operators, and matrix representations.
+- **Matrix Operations**: Solving systems of equations using Gaussian elimination and row reduction techniques.
+- **Eigenvalues and Eigenvectors**: Calculating characteristic polynomials, eigenvalues, and eigenvectors.
+- **Special Matrices**: Idempotent, symmetric matrices, and their transformations (e.g., reflections and rotations in 3D).
+- **Vector Calculations**: Use of dot and cross products; understanding subspaces like orthogonal complements.
+- **Determinants and Polynomials**: Computing determinants and using them for polynomial factorization.
+- **Applications**: Practical scenarios like investment optimization modeled as linear systems.
+- **Advanced Transformations**: Rotation and reflection matrices with geometric applications in linear algebra.
+- **Proof Techniques**: Rigorous proofs involving properties of vector spaces, transformations, and matrix algebra.
+
+
 ### [Assignment 1](Assignment1.pdf)
 #### Question 1
 - System of linear equations from financial scenarios.
