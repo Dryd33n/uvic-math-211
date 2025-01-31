@@ -1,4 +1,4 @@
-# MATH 211
+# <img src="https://github.com/Dryd33n/Dryd33n/blob/main/logos/uvic.png" height="25"> MATH 211: Matrix Algebra I
 LaTex files for assignments from UVic math 211, covering topics such as:
 - **Vector Spaces and Subspaces**: Definitions, axioms, and properties such as closure under addition and scalar multiplication.
 - **Linearity and Linear Transformations**: Proofs of linearity, computation of linear operators, and matrix representations.
