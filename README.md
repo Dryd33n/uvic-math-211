@@ -66,3 +66,32 @@ LaTex files for assignments from UVic math 211, covering topics such as:
 #### Question 4
 - LU factorization and solving systems using forward and backward substitution.
 - Analyzing transformations and solving matrix equations.
+
+### [Assignment 4](Assignment4.pdf)
+#### Question 1
+- Vector Space Verification
+- Vector Space axioms
+
+#### Question 2
+- Vector Space Properties
+- Coordinates with respect to a basis for a vector space
+
+#### Question 3
+- Change of Basis Matrix
+- Properties of change of basis matrix
+
+#### Question 4
+- Linear Transformations
+- Verifying Linearity
+
+### [Assignment 5](Assignment5.pdf)
+#### Question 1
+- Computing Determinants
+- Cofactor Expansion
+
+#### Question 2
+- Eigenvalues and Eigenvectors
+- Proofs with Eigenvectors
+
+#### Question 3
+- Diagonalization & Diagonalizability
