@@ -12,7 +12,7 @@ LaTex files for assignments from UVic math 211, covering topics such as:
 - **Proof Techniques**: Rigorous proofs involving properties of vector spaces, transformations, and matrix algebra.
 
 
-### [Assignment 1](Assignment1.pdf)
+### [Assignment 1](Assignment1.pdf) 39/40
 #### Question 1
 - System of linear equations from financial scenarios.
 - Solving systems of equations using substitution and elimination.
@@ -31,7 +31,7 @@ LaTex files for assignments from UVic math 211, covering topics such as:
 
 ---
 
-### [Assignment 2](Assignment2.pdf)
+### [Assignment 2](Assignment2.pdf) 38/40
 #### Question 1
 - Subspace verification for vector spaces.
 - Closure under addition and scalar multiplication.
@@ -50,7 +50,7 @@ LaTex files for assignments from UVic math 211, covering topics such as:
 
 ---
 
-### [Assignment 3](Assignment3.pdf)
+### [Assignment 3](Assignment3.pdf) 38/40
 #### Question 1
 - Proof of linearity for operators (additive and scalar linearity).
 - Constructing operator matrices for standard basis vectors.
@@ -67,7 +67,7 @@ LaTex files for assignments from UVic math 211, covering topics such as:
 - LU factorization and solving systems using forward and backward substitution.
 - Analyzing transformations and solving matrix equations.
 
-### [Assignment 4](Assignment4.pdf)
+### [Assignment 4](Assignment4.pdf) 37/40
 #### Question 1
 - Vector Space Verification
 - Vector Space axioms
@@ -84,7 +84,7 @@ LaTex files for assignments from UVic math 211, covering topics such as:
 - Linear Transformations
 - Verifying Linearity
 
-### [Assignment 5](Assignment5.pdf)
+### [Assignment 5](Assignment5.pdf) 37/40
 #### Question 1
 - Computing Determinants
 - Cofactor Expansion
